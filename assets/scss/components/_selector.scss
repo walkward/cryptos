@@ -1,0 +1,16 @@
+
+[data-selector-index] {
+  border: 2px transparent solid;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+[data-active="primary"] {
+  border: 2px lighten($secondary-color, 20%) solid;
+}
+[data-active="secondary"] {
+  border: 2px $primary-color solid;
+  [data-viewer-rename] {
+    color: $primary-color;
+  }
+}

@@ -1,0 +1,17 @@
+.viewer__left-arrow,
+.viewer__right-arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 2em;
+  height: 2em;
+  z-index: 1;
+  cursor: pointer;
+}
+.viewer__left-arrow {
+  left: 1em;
+}
+.viewer__right-arrow {
+  right: 1em;
+}

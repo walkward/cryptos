@@ -1,0 +1,95 @@
+#assetcard_container {
+  .asset-card {
+    padding: $container-padding $container-padding 0 $container-padding;
+    background-color: $medium-gray-solid;
+    margin: 0 ($grid-padding-bottom / 2) $grid-padding-bottom ($grid-padding-bottom / 2);
+    width: 200px;
+    @include breakpoint(small down){
+      width: 100%;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    .asset-card__image {
+      position: relative;
+      height: 215px;
+      @include breakpoint(small down){
+        height: 190px;
+      }
+
+      img {
+        object-fit: contain;
+      }
+    }
+
+    .asset-card__header {
+      line-height: 1;
+      padding: 0 0 $container-padding;
+    }
+
+    .asset-card__actions {
+      z-index: 1;
+      position: absolute;
+      background: $medium-gray-solid;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      padding: $container-padding 0;
+      transition: ease 0.1s;
+      transform-origin: bottom;
+      @include breakpoint(medium){
+        transform: scaleY(0);
+        visibility: hidden;
+      }
+
+      svg {
+        margin: 0 1.5px;
+      }
+    }
+
+    .active-rank use {
+      fill: yellow;
+    }
+
+    @include breakpoint(medium){
+      &:hover {
+        .asset-card__actions {
+          visibility: visible;
+          transform: scaleY(1);
+        }
+      }
+    }
+
+    [data-dropdown-flag] {
+      width: 225px;
+
+      button {
+        margin-bottom: 5px;
+        width: 100%;
+        text-align: center;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .label {
+          cursor: pointer;
+          width: 100%;
+        }
+      }
+    }
+    .flag-container,
+    .user-approval {
+      margin-bottom: 6px;
+    }
+    .flag-container .label,
+    .user-approval {
+      width: 100%;
+      overflow: hidden;
+      text-align: center;
+      // transform: translateY($form-spacing);
+    }
+  }
+}

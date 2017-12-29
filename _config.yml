@@ -1,0 +1,46 @@
+title: Your awesome title
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+permalink: pretty
+markdown: kramdown
+plugins:
+
+keep_files:
+  - assets/app.css
+  - assets/app.js
+  - assets/0.js
+  - assets/1.js
+  - assets/2.js
+  - assets/3.js
+  - assets/4.js
+  - assets/5.js
+  - assets/6.js
+  - assets/7.js
+  - assets/auth.js
+  - assets/storage.js
+# Exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - functions
+  - .sass-cache
+  - database.rules.json
+  - firebase.json
+  - log
+  - node_modules
+  - package.json
+  - package-lock.json
+  - gulpfile.babel.js
+  - webpack.config.js
+  - postcss.config.js
+  - .babelrc
+  - .bowerrc
+  - .DS_Store
+  - .sass-cache
+  - settings.yml
+  - assets/js
+  - assets/scss
+  - firebase-debug.log

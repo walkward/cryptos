@@ -1,0 +1,110 @@
+#widgetContainer {
+
+  .widget-wrapper {
+    margin-bottom: $grid-padding-bottom;
+  }
+
+  .widget {
+    background: $medium-gray-solid;
+    height: $widget-height;
+    position: relative;
+
+    .widget-header {
+      border-bottom: 1px solid $medium-gray;
+      padding: 0 $widget-container-padding;
+      @include header_vertical_align;
+
+      h4 {
+        @include small-bold-text;
+        @include header_vertical_align;
+        margin-bottom: 0px;
+      }
+    }
+
+    .widget-content {
+      height: $widget-content-height;
+      width: 100%;
+      overflow-y: auto;
+
+      /* WIDGET HELPER CLASSES */
+      .widget__padding {
+        padding: $widget-container-padding $widget-container-padding 0;
+      }
+      .widget__scroll-y {
+        overflow-y: auto;
+        height: 100%;
+      }
+    }
+    &.widget-double-height {
+      height: $widget-double-height;
+      .widget-content {
+        height: $widget-double-height - $widget-header-height;
+      }
+    }
+
+    .widget-drag-handle {
+      cursor: move;
+    }
+  }
+
+  .add-widget {
+    width: 100%;
+    height: $widget-height;
+
+    .add-widget__wrapper {
+      width: $add-widget-width;
+      height: $add-widget-width;
+      padding: (($add-widget-width / 2) - 20px) 0;
+      border-radius: 50%;
+      border: 2px dotted $body-font-color;
+      text-align: center;
+    }
+  }
+
+  .widget-type-carousel {
+    .carousel__tile {
+      width: $widget-carousel-width;
+      height: $widget-carousel-height;
+    }
+    .carousel__tile__img {
+      width: $widget-carousel-width;
+      height: $widget-carousel-height;
+    }
+  }
+
+  .widget-type-welcome {
+    @include breakpoint(medium up){
+      .widget-content {
+        overflow: inherit;
+      }
+    }
+    @include breakpoint(small down){
+      .widget-content {
+        height: 244px;
+      }
+    }
+    .welcome-widget__button {
+      padding-bottom: $grid-padding-bottom;
+
+      a {
+        display: block;
+        background: $medium-gray;
+        padding: $button-padding;
+      }
+
+      @include breakpoint(medium up){
+        &:nth-child(7),
+        &:nth-child(8) {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .widget-type-chart {
+    .chart__wrapper {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

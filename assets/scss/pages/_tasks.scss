@@ -1,0 +1,30 @@
+.project-task-manager-page {
+  #tasks-widget {
+    .widget,
+    .widget-content {
+      height: inherit;
+    }
+    .widget-header h3 {
+      @include header_vertical_align;
+    }
+  }
+  .status-light {
+    margin: 5px 10px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    float: left;
+  }
+  .sl-red {
+    background-color: get-color(alert);
+    box-shadow: #225 0 -1px 7px 1px, inset darken(get-color(alert), 30%) 0 -1px 9px, darken(get-color(alert), 20%) 0 0px 8px;
+  }
+  .sl-yellow {
+    background-color: get-color(warning);
+    box-shadow: #225 0 -1px 7px 1px, inset darken( get-color(warning), 30%) 0 -1px 9px, darken( get-color(warning), 20%) 0 0px 8px;
+  }
+  .sl-green {
+    background-color: get-color(success);
+    box-shadow: #225 0 -1px 7px 1px, inset darken(get-color(success), 30%) 0 -1px 9px, darken(get-color(success), 20%) 0 0px 8px;
+  }
+}

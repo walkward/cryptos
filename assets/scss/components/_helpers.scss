@@ -1,0 +1,210 @@
+/* MARGIN & PADDING HELPERS */
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-padding-top {
+  padding-top: 0 !important;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+
+.no-padding-left {
+  padding-left: 0 !important;
+}
+
+.no-padding-right {
+  padding-right: 0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-margin-top {
+  margin-top: 0 !important;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.no-margin-left {
+  margin-left: 0 !important;
+}
+
+.no-margin-right {
+  margin-right: 0 !important;
+}
+
+.no-border {
+  border: none !important;
+}
+/* PROTOTYPING COLOR CLASS HELPERS */
+
+.white {
+  fill: $white !important;
+  color: $white !important;
+}
+
+.white-bg {
+  background-color: $white !important;
+}
+
+.primary-color {
+  color: $primary-color !important;
+  fill: $primary-color !important;
+
+  > svg use {
+    fill: $primary-color !important;
+  }
+}
+
+.success-color {
+  color: $success-color !important;
+  fill: $success-color !important;
+
+  > svg use {
+    fill: $success-color !important;
+  }
+}
+
+.warning-color {
+  color: $warning-color !important;
+  fill: $warning-color !important;
+
+  > svg use {
+    fill: $warning-color !important;
+  }
+}
+
+.alert-color {
+  color: $alert-color !important;
+  fill: $alert-color !important;
+
+  > svg use {
+    fill: $alert-color !important;
+  }
+}
+
+.secondary-color {
+  color: $secondary-color !important;
+  fill: $secondary-color !important;
+
+  > svg use {
+    fill: $secondary-color !important;
+  }
+}
+
+.primary-background {
+  background-color: $primary-color !important;
+}
+
+.transparent-bg {
+  background-color: transparent !important;
+}
+
+.medium-gray {
+  fill: $medium-gray !important;
+  color: $medium-gray !important;
+}
+
+.body-font-color {
+  fill: $body-font-color !important;
+  color: $body-font-color !important;
+}
+
+.medium-gray-bg {
+  background-color: $medium-gray !important;
+}
+
+/* CIRCULAR IMAGE HELPER */
+.circle-img {
+  border-radius: 50%;
+}
+
+.profile-img {
+  height: 24px;
+  width: 24px;
+}
+/* FORM HELPERS */
+.form-strip-table,
+.form-strip-div {
+  input[type=text],
+  input[type=number],
+  input[type=date] {
+    padding: 0;
+    margin: inherit;
+    height: inherit;
+    line-height: inherit;
+    background: inherit;
+    font-size: inherit;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    border: inherit;
+    &:focus {
+      outline: none;
+      border: inherit;
+      background-color: inherit;
+      box-shadow: inherit;
+    }
+  }
+}
+.form-strip-select {
+  border-bottom: 1px dotted $light-gray;
+  display: inline-block;
+  select {
+    box-shadow: none !important;
+    cursor: pointer;
+    margin: inherit;
+    height: inherit;
+    line-height: inherit;
+    background-position: right -0.6rem center;
+    background-color: transparent;
+    font-size: inherit;
+    border: none;
+    padding: 0;
+    padding-right: 11px;
+  }
+}
+/* TRANSFORM HELPERS */
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.small-bold-text {
+  @include small-bold-text;
+}
+
+.visible {
+  visibility: visible !important;
+  transform: scaleY(1) !important;
+}
+
+[data-viewer-rotate="90"],
+.rotate-90 {
+  transform: rotate(90deg)
+}
+[data-viewer-rotate="180"],
+.rotate-180 {
+  transform: rotate(180deg)
+}
+[data-viewer-rotate="270"],
+.rotate-270 {
+  transform: rotate(270deg)
+}
+
+/* Trucate text helper */
+
+.truncate {
+  @include truncate;
+}
+
+/* Remove help cursor */
+
+.has-tip.pointer-cursor {
+  cursor: pointer !important;
+}

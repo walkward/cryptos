@@ -1,0 +1,89 @@
+#filmstrip {
+  height: calc(20% - 2.5px);
+  .pure-filmstrip {
+    padding: map-get($grid-margin-gutters, medium);
+    padding-bottom: 0px;
+    height: 100%;
+    width: 100%;
+    background: darken($body-background, 3%);
+    .filmstrip__inner {
+      height: 100%;
+      white-space: nowrap;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      padding-bottom: map-get($grid-margin-gutters, medium);
+      display: flex;
+      flex-direction: row;
+      .filmstrip__tile {
+        position: relative;
+        height: 100%;
+        margin-right: map-get($grid-margin-gutters, medium);
+        .filmstrip__tile__img {
+          height: 100%;
+          max-width: 180px;
+          object-fit: cover;
+        }
+        input[type=checkbox] {
+          + label {
+            position: absolute;
+            left: map-get($grid-margin-gutters, medium) / 3;
+            top: map-get($grid-margin-gutters, medium) / 2;
+            z-index: 2;
+          }
+          &:not(:checked) + label {
+            opacity: 0;
+          }
+          &:checked + label {
+            opacity: 1;
+          }
+        }
+        &:hover {
+          input[type=checkbox] + label {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* COMPARE IMAGES HOVER STYLES */
+.compare-view-page {
+  #filmstrip {
+    .compare__letter_id {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+    .filmstrip__tile {
+      position: relative;
+      .compare__letter_id::after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font-size: rem-calc(54);
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        left: 0;
+        top: 0;
+        z-index: 1;
+      }
+      &[data-active="primary"],
+      &:hover {
+        .compare__letter_id::after {
+          background-color: rgba(0,0,0,0.7);
+          content: 'A'
+        }
+      }
+      &[data-active="secondary"] {
+        .compare__letter_id::after {
+          background-color: rgba(0,0,0,0.7);
+          content: 'B'
+        }
+      }
+    }
+  }
+}

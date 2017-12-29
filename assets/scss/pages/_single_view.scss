@@ -1,0 +1,26 @@
+.full-size-img {
+  margin: 0 $grid-padding-bottom $grid-padding-bottom $grid-padding-bottom;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+}
+.single-view-page {
+  .full-size-img {
+    height: calc(100% - 100px);
+  }
+}
+
+.fullscreen {
+  #fullscreen-toggle svg.icon use {
+    fill: $primary-color !important;
+  }
+}
+
+#single-view {
+
+}

@@ -1,0 +1,12 @@
+.button {
+  text-transform: uppercase;
+  font-weight: $small-font-weight;
+  letter-spacing: $small-font-letter-spacing;
+}
+.menu > li > button,
+.header-vertical-align.menu > li {
+  @include header_vertical_align;
+}
+.header-vertical-align.menu > li:not(:last-child) {
+  margin-right: 5px;
+}

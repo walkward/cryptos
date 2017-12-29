@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body id="{{ page.id }}" class="{{ page.name | remove: 'html' | slugify }}-page flex-container flex-dir-row" >
+    <main id="main" class="flex-container flex-dir-column" data-page="{{ page.function }}">
+      {{ content }}
+    </main>
+    {% include scripts.html %}
+  </body>
+</html>

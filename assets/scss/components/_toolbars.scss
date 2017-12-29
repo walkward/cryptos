@@ -1,0 +1,70 @@
+#bottomToolbar,
+#toptoolbar {
+  @include header_vertical_align;
+  background: $body-background;
+  .dropdown .submenu {
+    li,
+    a {
+      background-color: $medium-gray-solid;
+    }
+  }
+  button,
+  svg {
+    @include header_vertical_align;
+  }
+  svg.icon {
+    width: $toolbar-icon-size;
+    height: $toolbar-icon-size;
+    margin: 0 ($toolbar-icon-spacing / 2);
+  }
+}
+
+#bottomToolbar {
+  border-top: $toolbar-border;
+  .compare-split-icon {
+    width: rem-calc(30) !important;
+    height: rem-calc(30) !important;
+  }
+  .slider {
+    margin: 0 $toolbar-icon-spacing 0 auto;
+    max-width: 150px;
+    .slider-handle:focus {
+      outline: none;
+    }
+  }
+  ul {
+    @include header_vertical_align;
+  }
+  @include breakpoint(small down){
+    font-size: rem-calc(12);
+  }
+}
+
+#toptoolbar {
+  border-bottom: $toolbar-border;
+  .toptoolbar-main-item {
+    @include small-bold-text;
+    @include header_vertical_align;
+    padding: $tab-item-padding;
+  }
+  .toptoolbar__dropdown-info {
+    font-weight: 900;
+    float: right;
+    opacity: 0.4;
+    font-size: 0.8rem;
+  }
+  @include breakpoint(small down){
+    .toptoolbar-logo {
+      padding-left: 0.35rem;
+    }
+  }
+}
+
+.toolbar-spacer::before {
+  content: '|';
+  margin: 0 10px;
+  opacity: 0.5;
+  @include breakpoint(small down){
+    margin: 0 2px;
+  }
+}

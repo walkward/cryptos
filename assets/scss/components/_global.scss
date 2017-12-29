@@ -1,0 +1,77 @@
+body {
+  height: 100vh;
+}
+
+#main {
+  width: calc(75% - 5px);
+  @include breakpoint(small down){
+    width: 100%;
+  }
+}
+
+:fullscreen {
+  position: fixed;
+  width: 100%;
+}
+
+html.fullscreen{
+  background-color: $body-background;
+}
+
+#wrapper {
+  height: calc(100% - 38px);
+  #content {
+    height: 100%;
+    #content__scroll {
+      height: 100%;
+      // padding-top: $grid-padding-bottom;
+      overflow-y: auto;
+    }
+  }
+}
+
+a:focus,
+li:focus {
+  outline: none;
+}
+
+button {
+  color: $body-font-color;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+.button {
+  &.primary .icon use {
+    fill: $primary-color;
+  }
+  &.secondary .icon use {
+    fill: $secondary-color;
+  }
+}
+
+.label {
+  @include small-bold-text;
+  .icon {
+    &.icon-left {
+      margin-right: 4px;
+      }
+    &.icon-right {
+      margin-left: 4px;
+    }
+    &[data-toggle] {
+      cursor: pointer;
+    }
+    use {
+      fill: $white;
+    }
+  }
+}
+
+@include breakpoint(small down){
+  // #sidenav {
+  //   position: absolute;
+  // }
+}
