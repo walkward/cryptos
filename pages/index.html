@@ -1,0 +1,38 @@
+---
+title: Home
+layout: default
+function: Home
+permalink: "/"
+---
+<div class="grid-container">
+
+  <div class="grid-x grid-padding-x">
+    <div class="large-12 cell">
+      <h2>Dashboard</h2>
+    </div>
+  </div>
+
+  <table id="marketData" class="tablesorter" rv-show="marketData.0" style="display:none;">
+    <thead>
+      <tr>
+        <th>Coin</th>
+        <th>Price</th>
+        <th>1h</th>
+        <th>24h</th>
+        <th>7d</th>
+        <th>MCap</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr rv-each-item="marketData">
+        <td><span rv-text="item.name"></span> (<span rv-text="item.symbol"></span>)</td>
+        <td rv-text="item.price_usd | currency"></td>
+        <td rv-text="item.percent_change_1h | percentage"></td>
+        <td rv-text="item.percent_change_24h | percentage"></td>
+        <td rv-text="item.percent_change_7d | percentage"></td>
+        <td rv-text="item.market_cap_usd | number"></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

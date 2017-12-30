@@ -1,0 +1,39 @@
+a:focus,
+li:focus {
+  outline: none;
+}
+
+button {
+  color: $body-font-color;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+.button {
+  &.primary .icon use {
+    fill: $primary-color;
+  }
+  &.secondary .icon use {
+    fill: $secondary-color;
+  }
+}
+
+.label {
+  @include small-bold-text;
+  .icon {
+    &.icon-left {
+      margin-right: 4px;
+      }
+    &.icon-right {
+      margin-left: 4px;
+    }
+    &[data-toggle] {
+      cursor: pointer;
+    }
+    use {
+      fill: $white;
+    }
+  }
+}

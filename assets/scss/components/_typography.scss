@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Avenir';
+    src: url('./fonts/Avenir_Black.eot');
+    src: url('./fonts/Avenir_Black.eot') format('embedded-opentype'),
+         url('./fonts/Avenir_Black.woff2') format('woff2'),
+         url('./fonts/Avenir_Black.woff') format('woff'),
+         url('./fonts/Avenir_Black.ttf') format('truetype'),
+         url('./fonts/Avenir_Black.svg#Avenir_Black') format('svg');
+         font-weight: 900;
+         font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir';
+    src: url('./fonts/Avenir_Book.eot');
+    src: url('./fonts/Avenir_Book.eot') format('embedded-opentype'),
+         url('./fonts/Avenir_Book.woff2') format('woff2'),
+         url('./fonts/Avenir_Book.woff') format('woff'),
+         url('./fonts/Avenir_Book.ttf') format('truetype'),
+         url('./fonts/Avenir_Book.svg#Avenir_Book') format('svg');
+         font-weight: 400;
+         font-style: normal;
+}

@@ -1,0 +1,91 @@
+/* PROTOTYPING COLOR CLASS HELPERS */
+
+.white {
+  fill: $white !important;
+  color: $white !important;
+}
+
+.white-bg {
+  background-color: $white !important;
+}
+
+.primary-color {
+  color: $primary-color !important;
+  fill: $primary-color !important;
+
+  > svg use {
+    fill: $primary-color !important;
+  }
+}
+
+.success-color {
+  color: $success-color !important;
+  fill: $success-color !important;
+
+  > svg use {
+    fill: $success-color !important;
+  }
+}
+
+.warning-color {
+  color: $warning-color !important;
+  fill: $warning-color !important;
+
+  > svg use {
+    fill: $warning-color !important;
+  }
+}
+
+.alert-color {
+  color: $alert-color !important;
+  fill: $alert-color !important;
+
+  > svg use {
+    fill: $alert-color !important;
+  }
+}
+
+.secondary-color {
+  color: $secondary-color !important;
+  fill: $secondary-color !important;
+
+  > svg use {
+    fill: $secondary-color !important;
+  }
+}
+
+.primary-background {
+  background-color: $primary-color !important;
+}
+
+.transparent-bg {
+  background-color: transparent !important;
+}
+
+.medium-gray {
+  fill: $medium-gray !important;
+  color: $medium-gray !important;
+}
+
+.body-font-color {
+  fill: $body-font-color !important;
+  color: $body-font-color !important;
+}
+
+.light-gray-bg {
+  background-color: $light-gray !important;
+}
+
+.medium-gray-bg {
+  background-color: $medium-gray !important;
+}
+
+.small-bold-text {
+  @include small-bold-text;
+}
+
+/* Trucate text helper */
+
+.truncate {
+  @include truncate;
+}

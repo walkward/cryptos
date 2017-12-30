@@ -1,0 +1,19 @@
+@mixin header_vertical_align {
+  line-height: $toolbar-height;
+  height: $toolbar-height;
+  vertical-align: middle;
+}
+
+@mixin small-bold-text {
+  text-transform: uppercase;
+  font-size: $small-font-size;
+  font-weight: $small-font-weight;
+  letter-spacing: $small-font-letter-spacing;
+}
+
+@mixin truncate {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  // display: inline-block;
+}
