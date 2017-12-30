@@ -11,12 +11,6 @@ const config = {
     app: './assets/js/app.js',
     sass: './assets/scss/app.scss'
   },
-  output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, '_site/assets'),
-    publicPath: '/assets/',
-    chunkFilename: '[name].js'
-  },
   plugins: [
     new webpack.optimize.MinChunkSizePlugin({
       minChunkSize: 10000 // Minimum number of characters
@@ -89,6 +83,12 @@ const config = {
 }
 
 if (process.env.NODE_ENV === 'production') {
+  config.output = {
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'assets'),
+    publicPath: '/assets/',
+    chunkFilename: '[name].js'
+  }
   config.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
@@ -97,7 +97,13 @@ if (process.env.NODE_ENV === 'production') {
     })
   )
 } else {
-  config.devtool = 'eval-source-map',
+  config.output = {
+    filename: '[name].js',
+    path: path.resolve(__dirname, '_site/assets'),
+    publicPath: '/assets/',
+    chunkFilename: '[name].js'
+  }
+  config.devtool = 'eval-source-map'
   config.plugins.push(
     new BrowserSyncPlugin({
       server: './_site',

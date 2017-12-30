@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "jekyll build -w -i | npm run webpack",
-    "build": "jekyll build && NODE_ENV='production' webpack -p",
+    "build": "NODE_ENV='production' webpack -p && jekyll build --config \"_config.yml,_config.prod.yml\"",
     "deploy": "npm run build && git add . && git commit -m 'deploy' && git push",
     "webpack": "webpack --env=dev --watch",
     "profile": "webpack --progress --profile --env=dev ; jekyll build --profile",
