@@ -25,10 +25,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - functions
   - .sass-cache
-  - database.rules.json
-  - firebase.json
   - log
   - node_modules
   - package.json
@@ -43,4 +40,3 @@ exclude:
   - settings.yml
   - assets/js
   - assets/scss
-  - firebase-debug.log
