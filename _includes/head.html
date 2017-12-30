@@ -5,7 +5,7 @@
   <title>{% if page.title %}{{ page.title }} • {% endif %}{{ site.title }}</title>
   {%- if page.excerpt -%}<meta name="description" content="{{ page.excerpt | strip_html }}">{%- endif -%}
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
-  <link rel="stylesheet" href="assets/app.css">
+  <link rel="stylesheet" href="{{ site.url }}/assets/app.css">
   {% if page.title == 'Trends' %}
   <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1243_RC12/embed_loader.js"></script>
   {% endif %}

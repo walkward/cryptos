@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home • Crypto Tracker</title><link rel="canonical" href="https://walkward.github.io/cryptos/404">
-  <link rel="stylesheet" href="assets/app.css">
+  <title>Home • Crypto Tracker</title><link rel="canonical" href="http://localhost:8000/404">
+  <link rel="stylesheet" href="http://localhost:8000/assets/app.css">
   
 </head>
 
@@ -20,9 +20,67 @@
     <br>
 
     <!-- Menu -->
-    <ul class="vertical menu">
-      <li><a href="https://walkward.github.io/cryptos">Dashboard</a></li>
-      <li><a href="https://walkward.github.io/cryptos/trends/">Trends</a></li>
+    <ul class="vertical menu accordion-menu" data-accordion-menu>
+      
+        
+        <li><a class="" href="http://localhost:8000/">Dashboard</a></li>
+        
+      
+        
+        <li><a class="" href="http://localhost:8000/coins/">Coins</a></li>
+        
+      
+        
+        <li>
+          <a href="#">Markets</a>
+          <ul class="menu vertical nested">
+          
+              <li><a class="" href="http://localhost:8000/markets/binance/">Binance</a></li>
+          
+              <li><a class="" href="http://localhost:8000/markets/coinbase/">Coinbase</a></li>
+          
+          </ul>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#">Trends</a>
+          <ul class="menu vertical nested">
+          
+              <li><a class="" href="http://localhost:8000/trends/?name=Bitcoin">Bitcoin</a></li>
+          
+              <li><a class="" href="http://localhost:8000/trends/?name=Verge">Verge</a></li>
+          
+              <li><a class="" href="http://localhost:8000/trends/?name=Ethlend">Ethlend</a></li>
+          
+              <li><a class="" href="http://localhost:8000/trends/?name=Tronix">Tronix</a></li>
+          
+              <li><a class="" href="http://localhost:8000/trends/?name=Salt%20Lending">Salt</a></li>
+          
+          </ul>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#">Social</a>
+          <ul class="menu vertical nested">
+          
+              <li><a class="" href="http://localhost:8000/social/?name=bitcoin&ticker=947169875327193088">Bitcoin</a></li>
+          
+              <li><a class="" href="http://localhost:8000/social/?name=vergecurrency&ticker=947171515497291776">Verge</a></li>
+          
+              <li><a class="" href="http://localhost:8000/social/?name=ethlend1&ticker=947171686633189376">Ethlend</a></li>
+          
+              <li><a class="" href="http://localhost:8000/social/?name=TronCommunity&ticker=947171124562968576">Tronix</a></li>
+          
+              <li><a class="" href="http://localhost:8000/social/?name=SaltLending&ticker=947171353785909248">Salt</a></li>
+          
+          </ul>
+        </li>
+        
+      
     </ul>
 
   </div>
@@ -59,8 +117,8 @@
 
 </div>
 
-    <div class="off-canvas-content flex-container" data-off-canvas-content>
-      <div class="flex-child-shrink light-gray-bg" style="height: 100vh;">
+    <div class="off-canvas-content" data-off-canvas-content>
+      <div id="toolbar" class="light-gray-bg">
   <ul class="vertical menu" data-dropdown-menu>
     <li>
       <button type="button" class="button" data-toggle="navigation">
@@ -77,7 +135,7 @@
   </ul>
 </div>
 
-      <main id="main" class="flex-child-grow padding-top-1 padding-bottom-1" data-page="">
+      <main id="main" data-page="">
         <style type="text/css" media="screen">
   .container {
     margin: 10px auto;
@@ -102,7 +160,7 @@
       </main>
     </div>
     <!-- BEG MAIN SCRIPTS-->
-<script type="text/javascript" src="assets/app.js"></script>
+<script type="text/javascript" src="http://localhost:8000/assets/app.js"></script>
 <!-- END MAIN SCRIPTS  -->
 
   </body>

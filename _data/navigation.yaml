@@ -1,0 +1,35 @@
+links:
+  - title: Dashboard
+    url: /
+  - title: Coins
+    url: /coins/
+  - title: Markets
+    subfolderitems:
+      - page: Binance
+        url: /markets/binance/
+      - page: Coinbase
+        url: /markets/coinbase/
+  - title: Trends
+    subfolderitems:
+      - page: Bitcoin
+        url: /trends/?name=Bitcoin
+      - page: Verge
+        url: /trends/?name=Verge
+      - page: Ethlend
+        url: /trends/?name=Ethlend
+      - page: Tronix
+        url: /trends/?name=Tronix
+      - page: Salt
+        url: /trends/?name=Salt%20Lending
+  - title: Social
+    subfolderitems:
+      - page: Bitcoin
+        url: /social/?name=bitcoin&ticker=947169875327193088
+      - page: Verge
+        url: /social/?name=vergecurrency&ticker=947171515497291776
+      - page: Ethlend
+        url: /social/?name=ethlend1&ticker=947171686633189376
+      - page: Tronix
+        url: /social/?name=TronCommunity&ticker=947171124562968576
+      - page: Salt
+        url: /social/?name=SaltLending&ticker=947171353785909248

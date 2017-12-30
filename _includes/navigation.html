@@ -8,9 +8,21 @@
     <br>
 
     <!-- Menu -->
-    <ul class="vertical menu">
-      <li><a href="{{ site.url }}">Dashboard</a></li>
-      <li><a href="{{ site.url }}/trends/">Trends</a></li>
+    <ul class="vertical menu accordion-menu" data-accordion-menu>
+      {% for item in site.data.navigation.links %}
+        {% if item.subfolderitems %}
+        <li>
+          <a href="#">{{ item.title }}</a>
+          <ul class="menu vertical nested">
+          {% for subitem in item.subfolderitems %}
+              <li><a class="{% if item.url == page.url %}active{% endif %}" href="{{ subitem.url | prepend: site.url }}">{{ subitem.page }}</a></li>
+          {% endfor %}
+          </ul>
+        </li>
+        {% else %}
+        <li><a class="{% if item.url == page.url %}active{% endif %}" href="{{ item.url | prepend: site.url }}">{{ item.title }}</a></li>
+        {% endif %}
+      {% endfor %}
     </ul>
 
   </div>

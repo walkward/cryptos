@@ -1,0 +1,40 @@
+---
+title: Coins
+layout: default
+function: Coins
+permalink: /coins/
+---
+<div class="grid-container">
+
+  <div class="grid-x grid-padding-x">
+    <div class="large-12 cell">
+      <h2>{{ page.title }}</h2>
+    </div>
+  </div>
+
+  <table id="coins" class="tablesorter" rv-show="coins.0" style="display:none;">
+    <thead>
+      <tr>
+        <th width="49"></th>
+        <th>Coin</th>
+        <th>Algorithm</th>
+        <th>ProofType</th>
+        <th>PreMined Value</th>
+        <th>Total Supply</th>
+        <th>Total Coins Free Float</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr rv-each-item="coins">
+        <td><img rv-src="item.ImageUrl" ></td>
+        <td rv-text="item.FullName"></td>
+        <td rv-text="item.Algorithm"></td>
+        <td rv-text="item.ProofType"></td>
+        <td rv-text="item.PreMinedValue"></td>
+        <td rv-text="item.TotalCoinSupply"></td>
+        <td rv-text="item.TotalCoinsFreeFloat"></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

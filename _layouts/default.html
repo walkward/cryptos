@@ -4,9 +4,9 @@
   <body id="{{ page.id }}" class="{{ page.name | remove: 'html' | slugify }}-page" >
     {% include navigation.html %}
     {% include tools/tools.html %}
-    <div class="off-canvas-content flex-container" data-off-canvas-content>
+    <div class="off-canvas-content" data-off-canvas-content>
       {% include toolbar.html %}
-      <main id="main" class="flex-child-grow padding-top-1 padding-bottom-1" data-page="{{ page.function }}">
+      <main id="main" data-page="{{ page.function }}">
         {{ content }}
       </main>
     </div>

@@ -1,11 +1,14 @@
 // import whatInput from 'what-input';
 import './vendor/foundation-core.js'
 import rivets from 'rivets'
-import updateData from './utils/updateData'
+// import updateData from './utils/updateData'
 import data from './utils/data'
 import tools from './lib/tools'
 import Home from './pages/Home'
 import Trends from './pages/Trends'
+import Social from './pages/Social'
+import Coins from './pages/Coins'
+import Markets from './pages/Markets'
 
 /**
  * Methods available to the browser
@@ -15,7 +18,9 @@ window.rivets = rivets
 window.$ = $
 window.cryptos = {
   data: data,
-  marketData: []
+  price: {},
+  marketData: [],
+  coins: []
 }
 
 /**
@@ -24,7 +29,10 @@ window.cryptos = {
  */
 const pageFunctions = {
   Home: Home,
-  Trends: Trends
+  Trends: Trends,
+  Coins: Coins,
+  Social: Social,
+  Markets: Markets
 }
 
 /**
@@ -37,10 +45,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
   const pageName = page.dataset.page
   if (page.dataset.page) {
     // Make sure we have market data before executing anything
-    updateData()
-      .then((result) => {
-        return pageFunctions[pageName]()
-      })
+    pageFunctions[pageName]()
       .then((result) => {
         tools()
       })
