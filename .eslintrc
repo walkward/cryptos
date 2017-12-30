@@ -26,7 +26,8 @@
     "navigator": false,
     "window": true,
     "Foundation": true,
-    "clique": true
+    "cryptos": true,
+    "rivets": true
   },
 
   "rules": {

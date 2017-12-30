@@ -1,10 +1,9 @@
 @charset 'utf-8';
 
-@import 'foundation_settings';
-@import 'settings';
+@import 'variables';
 @import '../../node_modules/foundation-sites/scss/foundation';
 @import '../../node_modules/foundation-sites/scss/util/mixins';
-// @import '../../node_modules/motion-ui/motion-ui';
+@import '../../node_modules/motion-ui/motion-ui';
 
 @include foundation-global-styles;
 // @include foundation-grid;
@@ -49,42 +48,14 @@
 // @include foundation-float-classes;
 @include foundation-flex-classes;
 
-// @include foundation-prototype-classes;
+@include foundation-prototype-classes;
 
-// @include motion-ui-transitions;
-// @include motion-ui-animations;
+@include motion-ui-transitions;
+@include motion-ui-animations;
 
 // Custom components
 @import 'components/mixins';
 @import 'components/typography';
 @import 'components/global';
 @import 'components/helpers';
-@import 'components/pagetitle';
-@import 'components/sidenav';
-@import 'components/carousel';
-@import 'components/icons';
-@import 'components/buttons';
-@import 'components/tabs';
-@import 'components/breadcrumbs';
-@import 'components/assetcard';
-@import 'components/widget';
-@import 'components/filmstrip';
-@import 'components/assetinfo';
-@import 'components/toolbars';
-@import 'components/reveal';
-@import 'components/selector';
-@import 'components/forms';
-@import 'components/autocomplete';
-@import 'components/label';
-@import 'components/callout';
-@import 'components/table';
-@import 'components/settings';
-@import 'components/notifications';
-@import 'components/comments';
-@import 'pages/compare_view';
-@import 'pages/single_view';
-@import 'pages/budget';
-@import 'pages/tasks';
-@import 'pages/viewer';
-@import 'vendor/split';
-@import 'vendor/magnify';
+@import 'vendor/tablesorter';
