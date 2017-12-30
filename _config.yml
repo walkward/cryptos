@@ -5,6 +5,7 @@ url: "https://walkward.github.io/cryptos"
 
 # Build settings
 markdown: kramdown
+destination: docs
 plugins:
 
 keep_files:
