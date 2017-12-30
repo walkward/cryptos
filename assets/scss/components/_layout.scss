@@ -1,10 +1,23 @@
 #main {
-  padding-left: rem-calc(58);
-  padding-top: 1rem;
   padding-bottom: 1rem;
+  @include breakpoint(medium up) {
+    padding-top: 1rem;
+    padding-left: rem-calc(58);
+  }
+  @include breakpoint(small down) {
+    padding-top: rem-calc(52) + 1rem;
+  }
 }
 
 #toolbar {
-  height: 100vh;
   position: fixed;
+  @include breakpoint(medium up) {
+    height: 100%;
+  }
+  @include breakpoint(small down) {
+    width: 100%;
+    > .menu {
+      flex-direction: row;
+    }
+  }
 }

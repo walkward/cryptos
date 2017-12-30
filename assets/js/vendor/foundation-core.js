@@ -15,7 +15,7 @@ import { AccordionMenu } from 'foundation-sites/js/foundation.accordionMenu'
 import { Drilldown } from 'foundation-sites/js/foundation.drilldown'
 import { Dropdown } from 'foundation-sites/js/foundation.dropdown'
 import { DropdownMenu } from 'foundation-sites/js/foundation.dropdownMenu'
-// import { Equalizer } from 'foundation-sites/js/foundation.equalizer';
+// import { Equalizer } from 'foundation-sites/js/foundation.equalizer'
 // import { Interchange } from 'foundation-sites/js/foundation.interchange';
 // import { Magellan } from 'foundation-sites/js/foundation.magellan';
 import { OffCanvas } from 'foundation-sites/js/foundation.offcanvas'
@@ -71,7 +71,7 @@ Foundation.plugin(Dropdown, 'Dropdown')
 
 Foundation.plugin(DropdownMenu, 'DropdownMenu')
 
-// Foundation.plugin(Equalizer, 'Equalizer');
+// Foundation.plugin(Equalizer, 'Equalizer')
 
 // Foundation.plugin(Interchange, 'Interchange');
 

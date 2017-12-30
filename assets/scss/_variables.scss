@@ -433,7 +433,7 @@ $select-radius: $global-radius;
 $input-color: $body-font-color;
 $input-placeholder-color: scale-color($body-font-color, $lightness: -30%);
 $input-font-family: inherit;
-$input-font-size: rem-calc(14);
+$input-font-size: rem-calc(16);
 $input-font-weight: $global-weight-normal;
 $input-line-height: $global-lineheight;
 $input-background: lighten($light-gray, 5%);
@@ -535,7 +535,7 @@ $orbit-control-zindex: 10;
 
 $pagination-font-size: rem-calc(14);
 $pagination-margin-bottom: $global-margin;
-$pagination-item-color: $light-gray;
+$pagination-item-color: $dark-gray;
 $pagination-item-padding: rem-calc(3 10);
 $pagination-item-spacing: rem-calc(1);
 $pagination-radius: $global-radius;

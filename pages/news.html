@@ -1,0 +1,38 @@
+---
+title: News
+layout: default
+permalink: /news/
+function: News
+---
+<div class="grid-container">
+  <!-- Coin Social Widgets -->
+  <div class="grid-x grid-padding-x" id="newsFeed">
+    <div class="large-12 cell">
+      <h1 class="margin-top-1">News</h1>
+    </div>
+    <div class="small-12 large-3 cell padding-bottom-1" rv-each-item="news">
+      <div class="card" style="height:100%;">
+        <img rv-show="item.urlToImage | isUrl" onerror="this.style.display = 'none';" rv-src="item.urlToImage" style="display:none;object-fit:cover;height:125px;">
+        <div class="flex-container flex-dir-column align-justify" style="height:100%;">
+          <div class="card-section flex-child-grow">
+            <small rv-text="item.source.name"></small>
+            <a rv-href="item.url" target="_blank"><h4><strong rv-text="item.title"></strong></h4></a>
+            <p rv-text="item.description | truncate 150"></p>
+          </div>
+          <div class="card-section padding-top-0 flex-child-shrink">
+            <small rv-text="item.publishedAt | date"></small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="large-12 cell">
+      <ul class="pagination text-center" role="navigation" aria-label="Pagination">
+        <li><a onclick="window.location.href='/news/?query=' + cryptos.params.query + '&page=1'" data-pagination="1">1</a></li>
+        <li><a onclick="window.location.href='/news/?query=' + cryptos.params.query + '&page=2'" data-pagination="2">2</a></li>
+        <li><a onclick="window.location.href='/news/?query=' + cryptos.params.query + '&page=3'" data-pagination="3">3</a></li>
+        <li><a onclick="window.location.href='/news/?query=' + cryptos.params.query + '&page=4'" data-pagination="4">4</a></li>
+        <li><a onclick="window.location.href='/news/?query=' + cryptos.params.query + '&page=5'" data-pagination="5">5</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

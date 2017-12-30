@@ -3,11 +3,13 @@ import './vendor/foundation-core.js'
 import rivets from 'rivets'
 // import updateData from './utils/updateData'
 import data from './utils/data'
+import params from './utils/params'
 import tools from './lib/tools'
 import Home from './pages/Home'
 import Trends from './pages/Trends'
 import Social from './pages/Social'
 import Coins from './pages/Coins'
+import News from './pages/News'
 import Markets from './pages/Markets'
 
 /**
@@ -17,6 +19,7 @@ import Markets from './pages/Markets'
 window.rivets = rivets
 window.$ = $
 window.cryptos = {
+  params: params,
   data: data,
   price: {},
   marketData: [],
@@ -32,7 +35,8 @@ const pageFunctions = {
   Trends: Trends,
   Coins: Coins,
   Social: Social,
-  Markets: Markets
+  Markets: Markets,
+  News: News
 }
 
 /**
