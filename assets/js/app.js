@@ -49,5 +49,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       .then((result) => {
         tools()
       })
+  } else {
+    tools()
   }
 })

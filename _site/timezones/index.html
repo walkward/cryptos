@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home • Crypto Tracker</title><link rel="canonical" href="https://walkward.github.io/cryptos/">
+  <title>Time Zones • Crypto Tracker</title><link rel="canonical" href="https://walkward.github.io/cryptos/timezones/">
   <link rel="stylesheet" href="https://walkward.github.io/cryptos/assets/app.css">
   
 </head>
 
-  <body id="" class="index-page" >
+  <body id="" class="timezones-page" >
     <div class="off-canvas position-left white-bg" id="navigation" data-off-canvas>
 
     <!-- Close button -->
@@ -23,7 +23,7 @@
     <ul class="vertical menu accordion-menu" data-accordion-menu>
       
         
-        <li><a class="active" href="https://walkward.github.io/cryptos/">Dashboard</a></li>
+        <li><a class="" href="https://walkward.github.io/cryptos/">Dashboard</a></li>
         
       
         
@@ -82,7 +82,7 @@
         
       
         
-        <li><a class="" href="https://walkward.github.io/cryptos/timezones/">Time Zones</a></li>
+        <li><a class="active" href="https://walkward.github.io/cryptos/timezones/">Time Zones</a></li>
         
       
     </ul>
@@ -139,39 +139,39 @@
   </ul>
 </div>
 
-      <main id="main" data-page="Home">
+      <main id="main" data-page="">
         <div class="grid-container">
-
   <div class="grid-x grid-padding-x">
-    <div class="large-12 cell">
-      <h2>Dashboard</h2>
+    <div class="large-6 cell">
+       <ul class="vertical menu">
+         <li class="margin-bottom-1 h4">Denver: <span id="DEN"></span></li>
+         <li class="margin-bottom-1 h4">New York: <span id="NYC"></span></li>
+         <li class="margin-bottom-1 h4">United Kingdom: <span id="LON"></span></li>
+         <li class="margin-bottom-1 h4">Turkey: <span id="IST"></span></li>
+         <li class="margin-bottom-1 h4">Korea: <span id="SEO"></span></li>
+         <li class="margin-bottom-1 h4">Hong Kong: <span id="HKT"></span></li>
+         <li class="margin-bottom-1 h4">Australia: <span id="MEL"></span></li>
+       </ul>
     </div>
   </div>
-
-  <table id="marketData" class="tablesorter" rv-show="marketData.0" style="display:none;">
-    <thead>
-      <tr>
-        <th>Coin</th>
-        <th>Price</th>
-        <th>1h</th>
-        <th>24h</th>
-        <th>7d</th>
-        <th>MCap</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr rv-each-item="marketData">
-        <td><span rv-text="item.name"></span> (<span rv-text="item.symbol"></span>)</td>
-        <td rv-text="item.price_usd | currency"></td>
-        <td rv-text="item.percent_change_1h | percentage"></td>
-        <td rv-text="item.percent_change_24h | percentage"></td>
-        <td rv-text="item.percent_change_7d | percentage"></td>
-        <td rv-text="item.market_cap_usd | number"></td>
-      </tr>
-    </tbody>
-  </table>
-
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.14/moment-timezone-with-data.min.js"></script>
+<script type="text/javascript">
+function toTimeZone(time, zone) {
+  var format = 'ddd h:ma';
+  return moment(time, format).tz(zone).format(format);
+}
+var time = new Date()
+document.getElementById('DEN').innerHTML = toTimeZone(time, "America/Denver")
+document.getElementById('NYC').innerHTML = toTimeZone(time, "America/New_York")
+document.getElementById('LON').innerHTML = toTimeZone(time, "Europe/London")
+document.getElementById('IST').innerHTML = toTimeZone(time, "Europe/Istanbul")
+document.getElementById('SEO').innerHTML = toTimeZone(time, "Asia/Seoul")
+document.getElementById('HKT').innerHTML = toTimeZone(time, "Asia/Hong_Kong")
+document.getElementById('MEL').innerHTML = toTimeZone(time, "Australia/Melbourne")
+</script>
 
       </main>
     </div>

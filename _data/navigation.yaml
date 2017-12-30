@@ -33,3 +33,5 @@ links:
         url: /social/?name=TronCommunity&ticker=947171124562968576
       - page: Salt
         url: /social/?name=SaltLending&ticker=947171353785909248
+  - title: Time Zones
+    url: /timezones/
