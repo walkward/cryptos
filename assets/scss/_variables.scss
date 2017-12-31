@@ -82,7 +82,7 @@ $white: #fefefe;
 $light-gray: lighten($black, 85%);
 $medium-gray: lighten($black, 70%);
 $dark-gray: lighten($black, 50%);
-$body-background: #f9f9f9;
+$body-background: lighten($black, 88%);
 $body-font-color: lighten($black, 15%);
 $body-font-family: 'Avenir', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $body-antialiased: true;

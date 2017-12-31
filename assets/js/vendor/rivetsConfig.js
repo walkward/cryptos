@@ -27,7 +27,8 @@ export default function () {
     // Removes cents and add commas
     rivets.formatters.number = function (value) {
       value = Math.round(Big(value))
-      return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+      value = '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+      return value.slice(0, -8) + 'm'
     }
 
     // Removes cents and add commas
