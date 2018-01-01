@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research • Crypto Tracker</title><link rel="canonical" href="https://walkward.github.io/cryptos/research/">
+  <link rel="stylesheet" href="https://walkward.github.io/cryptos/assets/app.css">
+  
+</head>
+
+  <body id="" class="research-page" >
+    <div class="off-canvas position-left white-bg" id="navigation" data-off-canvas>
+
+    <!-- Close button -->
+    <button class="close-button" aria-label="Close menu" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    <br>
+
+    <!-- Menu -->
+    <ul class="vertical menu accordion-menu" data-accordion-menu>
+      
+        
+        <li><a class="" href="https://walkward.github.io/cryptos/">Dashboard</a></li>
+        
+      
+        
+        <li><a class="" href="https://walkward.github.io/cryptos/coins/">Coins</a></li>
+        
+      
+        
+        <li><a class="active" href="https://walkward.github.io/cryptos/research/">Research</a></li>
+        
+      
+        
+        <li>
+          <a href="#">Trends</a>
+          <ul class="menu vertical nested">
+          
+              <li><a class="" href="https://walkward.github.io/cryptos/trends/?name=Bitcoin">Bitcoin</a></li>
+          
+              <li><a class="" href="https://walkward.github.io/cryptos/trends/?name=Verge">Verge</a></li>
+          
+              <li><a class="" href="https://walkward.github.io/cryptos/trends/?name=Ethlend">Ethlend</a></li>
+          
+              <li><a class="" href="https://walkward.github.io/cryptos/trends/?name=Tronix">Tronix</a></li>
+          
+              <li><a class="" href="https://walkward.github.io/cryptos/trends/?name=Salt%20Lending">Salt</a></li>
+          
+          </ul>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#">Social</a>
+          <ul class="menu vertical nested">
+          
+              <li><a class="" href="https://walkward.github.io/cryptos/social/?name=bitcoin&ticker=947169875327193088">Bitcoin</a></li>
+          
+              <li><a class="" href="https://walkward.github.io/cryptos/social/?name=vergecurrency&ticker=947171515497291776">Verge</a></li>
+          
+              <li><a class="" href="https://walkward.github.io/cryptos/social/?name=ethlend1&ticker=947171686633189376">Ethlend</a></li>
+          
+              <li><a class="" href="https://walkward.github.io/cryptos/social/?name=TronCommunity&ticker=947171124562968576">Tronix</a></li>
+          
+              <li><a class="" href="https://walkward.github.io/cryptos/social/?name=SaltLending&ticker=947171353785909248">Salt</a></li>
+          
+          </ul>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#">News</a>
+          <ul class="menu vertical nested">
+          
+              <li><a class="" href="https://walkward.github.io/cryptos/news/?query=Bitcoin&page=1">Bitcoin</a></li>
+          
+              <li><a class="" href="https://walkward.github.io/cryptos/news/?query=Verge%20Crypto&page=1">Verge</a></li>
+          
+              <li><a class="" href="https://walkward.github.io/cryptos/news/?query=Ethlend&page=1">Ethlend</a></li>
+          
+              <li><a class="" href="https://walkward.github.io/cryptos/news/?query=Tronix&page=1">Tronix</a></li>
+          
+              <li><a class="" href="https://walkward.github.io/cryptos/news/?query=Salt%20Lending&page=1">Salt</a></li>
+          
+          </ul>
+        </li>
+        
+      
+        
+        <li><a class="" href="https://walkward.github.io/cryptos/timezones/">Time Zones</a></li>
+        
+      
+    </ul>
+
+  </div>
+
+    <div class="off-canvas position-left white-bg" id="tools" data-off-canvas>
+
+  <!-- Close button -->
+  <button class="close-button" aria-label="Close menu" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+  <br>
+
+  <!-- Menu -->
+  <div class="grid-x grid-padding-x cell">
+  <div class="large-12 cell">
+    <h4>SATS to USD</h4>
+    <hr>
+    <table class="unstriped margin-0">
+      <tbody>
+        <tr>
+          <td class="text-right">SATS:</td>
+          <td><input class="margin-0" type="number" name="" rv-value="input.sats"></td>
+        </tr>
+        <tr>
+          <td class="text-right">USD:</td>
+          <td rv-text="input.sats | satsToUsd"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+</div>
+
+    <div class="off-canvas-content" data-off-canvas-content>
+      <div id="toolbar" class="light-gray-bg">
+  <ul class="vertical menu" data-dropdown-menu>
+    <li>
+      <button type="button" class="button" data-toggle="navigation">
+        <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#ffffff" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="button" data-toggle="tools">
+        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="#ffffff" d="M22.7,19L13.6,9.9C14.5,7.6 14,4.9 12.1,3C10.1,1 7.1,0.6 4.7,1.7L9,6L6,9L1.6,4.7C0.4,7.1 0.9,10.1 2.9,12.1C4.8,14 7.5,14.5 9.8,13.6L18.9,22.7C19.3,23.1 19.9,23.1 20.3,22.7L22.6,20.4C23.1,20 23.1,19.3 22.7,19Z" />
+        </svg>
+      </button>
+    </li>
+  </ul>
+</div>
+
+      <main id="main" data-page="Research">
+        <div class="grid-container" id="research">
+  <form id="researchForm">
+
+    <div class="grid-x grid-padding-x align-justify">
+      <div class="small-12 large-4 cell">
+        <h2 class="font-bold"> <span rv-text="research.name"></span> Research</h2>
+      </div>
+      <div class="small-12 large-4 cell flex-container">
+        <select id="researchSelector" class="" name="">
+            <option value="" selected="selected" disabled="disabled">Select Coin</option>
+          
+            <option value="cjbwebhlt2upf0156avwrhdtr">Ethereum</option>
+          
+            <option value="cjbwhcn872v220156ga04c1ab">Ripple</option>
+          
+            <option value="cjbwhbyiu2v1u0156n9onrwff">Tronix</option>
+          
+            <option value="cjbwhbpm52v1p015632se5yq6">Salt Lending</option>
+          
+            <option value="cjbwhcy0p2v260156ps5u6dv4">Verge</option>
+          
+            <option value="cjbwhcecz2v1y0156hyhkvie0">Ethlend</option>
+          
+            <option value="cjbwh9tpt2v180156og8gaznv">Cardano</option>
+          
+            <option value="cjbwhawyq2v1h01561uaaeons">FunFair</option>
+          
+        </select>
+        <div>
+          <button id="saveForm" class="button small-bold-text margin-bottom-0 margin-left-1" name="button">SAVE</button>
+        </div>
+      </div>
+    </div>
+
+    <hr class="margin-top-0">
+
+    <div class="grid-x grid-padding-x" rv-show="research.name" style="display:none;">
+      <div class="large-8 cell">
+        <h4 class="primary-color font-bold">Management Review</h4>
+        <textarea name="mgmtReview" rows="4" rv-text="research.mgmtReview"></textarea>
+
+        <h4 class="primary-color font-bold">White Paper Review</h4>
+        <textarea name="wPReview" rows="4" rv-text="research.wPReview"></textarea>
+
+        <h4 class="primary-color font-bold">Product Review</h4>
+        <textarea name="productReview" rows="4" rv-text="research.productReview"></textarea>
+
+        <h4 class="primary-color font-bold">News & Events</h4>
+        <textarea name="newsEvents" rows="4" rv-text="research.newsEvents"></textarea>
+
+        <h4 class="primary-color font-bold">Links</h4>
+        <div class="button-group secondary stacked-for-small">
+          <a class="button small-bold-text" target="_blank" rv-href="research.cryptoComareUrl">Crypto Compare</a>
+          <a class="button small-bold-text" target="_blank" rv-href="research.cryptoComareUrl">Coin Checkup</a>
+        </div>
+        <div class="button-group secondary stacked-for-small">
+          <a class="button small-bold-text" target="_blank" rv-href="research.wPUrl">White Paper</a>
+          <a class="button small-bold-text" target="_blank" rv-href="research.url">Website</a>
+          <a class="button small-bold-text" target="_blank" rv-href="research.blocksUrl">Blocks</a>
+        </div>
+      </div>
+
+      <div class="large-4 cell">
+        <h4 class="primary-color font-bold">Price Analysis</h4>
+        <table>
+          <tr>
+            <td class="text-right">Price:</td>
+            <td rv-text="tickerPrice"></td>
+          </tr>
+          <tr>
+            <td class="text-right">Floor Price:</td>
+            <td><input class="margin-0" type="number" step="0.01" name="floorPrice" rv-value="research.floorPrice"></td>
+          </tr>
+          <tr>
+            <td class="text-right">Target Price:</td>
+            <td><input class="margin-0" type="number" step="0.01" name="targetPrice" rv-value="research.targetPrice"></td>
+          </tr>
+          <tr>
+            <td class="text-right">P/T:</td>
+            <td rv-text="tickerPrice | divide research.targetPrice"></td>
+          </tr>
+        </table>
+
+        <h4 class="primary-color font-bold">Coin Rating</h4>
+        <table>
+          <tr>
+            <td class="text-right"><span data-tooltip title="0=Incompetent&#13; 5=Semiproven&#13; 10=Fortune 500 quality">Management:</span></td>
+            <td><input class="margin-0" type="number" name="mgmtRating" rv-value="research.mgmtRating"></td>
+          </tr>
+          <tr>
+            <td class="text-right"><span data-tooltip title="0=Lackluster&#13; 5=Medeocre Solution&#13; 10=Visionary">White Paper:</span></td>
+            <td><input class="margin-0" type="number" name="wPRating" rv-value="research.wPRating"></td>
+          </tr>
+          <tr>
+            <td class="text-right"><span data-tooltip title="0=Off the map&#13; 5=Some Coverage&#13; 10=Lambos!">Hype:</span></td>
+            <td><input class="margin-0" type="number" name="hypeRating" rv-value="research.hypeRating"></td>
+          </tr>
+          <tr>
+            <td class="text-right"><span data-tooltip title="0=Widespread Hate&#13; 5=Some Hodlers&#13; 10=Cult Following">Loyalty:</span></td>
+            <td><input class="margin-0" type="number" name="loyaltyRating" rv-value="research.loyaltyRating"></td>
+          </tr>
+          <tr>
+            <td class="text-right"><span data-tooltip title="0=Incompetent&#13; 5=Semiproven&#13; 10=Genius">Developers:</span></td>
+            <td><input class="margin-0" type="number" name="devRating" rv-value="research.devRating"></td>
+          </tr>
+          <tr>
+            <td class="text-right"><span data-tooltip title="0=Useless&#13; 5=Some Use Case&#13; 10=Revolutionary">Product:</span></td>
+            <td><input class="margin-0" type="number" name="productRating" rv-value="research.productRating"></td>
+          </tr>
+          <tr>
+            <td class="text-right"><strong>Total:</strong></td>
+            <td><strong rv-text="ratingSum | sum research.mgmtRating | sum research.wPRating | sum research.hypeRating | sum research.loyaltyRating | sum research.devRating | sum research.productRating"></strong></td>
+          </tr>
+        </table>
+
+        <h4 class="primary-color font-bold">Stats</h4>
+        <table>
+          <tr>
+            <td class="text-right">ICO Date:</td>
+            <td><input class="margin-0" type="text" name="icoDate" rv-value="research.icoDate"></td>
+          </tr>
+          <tr>
+            <td class="text-right">Developer Qty:</td>
+            <td><input class="margin-0" type="text" name="devQty" rv-value="research.devQty"></td>
+          </tr>
+          <tr>
+            <td class="text-right">Team Qty:</td>
+            <td><input class="margin-0" type="text" name="teamQty" rv-value="research.teamQty"></td>
+          </tr>
+          <tr>
+            <td class="text-right">Peer Coins:</td>
+            <td><input class="margin-0" type="text" name="peers" rv-value="research.peers"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+      </main>
+    </div>
+    <div class="reveal callout padding-1 toast" id="toastModal" data-reveal data-overlay="false" data-reset-on-close="true" data-btm-offset-pct="10"></div>
+    <!-- BEG MAIN SCRIPTS-->
+<script type="text/javascript" src="https://walkward.github.io/cryptos/assets/app.js"></script>
+<!-- END MAIN SCRIPTS  -->
+
+  </body>
+</html>

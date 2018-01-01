@@ -4,6 +4,20 @@ import _ from 'lodash'
 
 export default function () {
   return new Promise((resolve, reject) => {
+    // Create sum
+    rivets.formatters.sum = function (value, added) {
+      value = Big(value)
+      added = Big(added)
+      return value.plus(added)
+    }
+
+    // Divide numbers
+    rivets.formatters.divided = function (value, divisor) {
+      value = Big(value)
+      divisor = Big(divisor)
+      return value.div(divisor)
+    }
+
     // Formate Date
     rivets.formatters.date = function (value) {
       return value.slice(0, 10)

@@ -3,12 +3,8 @@ links:
     url: /
   - title: Coins
     url: /coins/
-  - title: Markets
-    subfolderitems:
-      - page: Binance
-        url: /markets/binance/
-      - page: Coinbase
-        url: /markets/coinbase/
+  - title: Research
+    url: /research/
   - title: Trends
     subfolderitems:
       - page: Bitcoin
@@ -47,3 +43,21 @@ links:
         url: /news/?query=Salt%20Lending&page=1
   - title: Time Zones
     url: /timezones/
+
+research:
+  - name: Ethereum
+    id: cjbwebhlt2upf0156avwrhdtr
+  - name: Ripple
+    id: cjbwhcn872v220156ga04c1ab
+  - name: Tronix
+    id: cjbwhbyiu2v1u0156n9onrwff
+  - name: Salt Lending
+    id: cjbwhbpm52v1p015632se5yq6
+  - name: Verge
+    id: cjbwhcy0p2v260156ps5u6dv4
+  - name: Ethlend
+    id: cjbwhcecz2v1y0156hyhkvie0
+  - name: Cardano
+    id: cjbwh9tpt2v180156og8gaznv
+  - name: FunFair
+    id: cjbwhawyq2v1h01561uaaeons

@@ -34,6 +34,40 @@ function price (symbols, handleData) {
   })
 }
 
+function research (id, handleData) {
+  $.ajax({
+    'async': true,
+    'crossDomain': true,
+    'url': 'https://api.graph.cool/simple/v1/cjbwdrpss0okf0154rwt7noqf',
+    'method': 'POST',
+    'headers': {
+      'authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTQ4MjQ1ODMsImNsaWVudElkIjoiY2o2aW1sczYxM215ajAxNjJ6Ym54Z3NnaCIsInByb2plY3RJZCI6ImNqYndkcnBzczBva2YwMTU0cnd0N25vcWYiLCJwZXJtYW5lbnRBdXRoVG9rZW5JZCI6ImNqYndmZzFrNDBxaGgwMTU0eHFubjI5d3kifQ.6i-0oVbbkrRsXj7-msBiMiIRrSRc4JgLeeYBRSFuAAo',
+      'content-type': 'application/json'
+    },
+    'processData': false,
+    'data': '{"query":"{Coin(id:\\"' + id + '\\"){name ticker blockUrl cryptoComareUrl coinCheckUpUrl floorPrice hypeRating mgmtRating wPRating mgmtReview productReview productRating loyaltyRating devRating devQty teamQty newsEvents targetPrice url wPReview wPUrl peers}}"}'
+  }).done(function (data) {
+    handleData(data)
+  })
+}
+
+function saveResearch (research, handleData) {
+  $.ajax({
+    'async': true,
+    'crossDomain': true,
+    'url': 'https://api.graph.cool/simple/v1/cjbwdrpss0okf0154rwt7noqf',
+    'method': 'POST',
+    'headers': {
+      'authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTQ4MjQ1ODMsImNsaWVudElkIjoiY2o2aW1sczYxM215ajAxNjJ6Ym54Z3NnaCIsInByb2plY3RJZCI6ImNqYndkcnBzczBva2YwMTU0cnd0N25vcWYiLCJwZXJtYW5lbnRBdXRoVG9rZW5JZCI6ImNqYndmZzFrNDBxaGgwMTU0eHFubjI5d3kifQ.6i-0oVbbkrRsXj7-msBiMiIRrSRc4JgLeeYBRSFuAAo',
+      'content-type': 'application/json'
+    },
+    'processData': false,
+    'data': research
+  }).done(function (data) {
+    handleData(data)
+  })
+}
+
 function news (query, page, handleData) {
   query = encodeURI(query)
   let newsTo = new Date()
@@ -56,5 +90,7 @@ module.exports = {
   marketData: marketData,
   coins: coins,
   price: price,
-  news: news
+  news: news,
+  research: research,
+  saveResearch: saveResearch
 }

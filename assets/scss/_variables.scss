@@ -72,7 +72,7 @@ $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #2284ff,
-  secondary: #7e8082,
+  secondary: #eceef1,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
@@ -833,7 +833,7 @@ $titlebar-icon-spacing: 0.25rem;
 // -----------
 
 $has-tip-cursor: help;
-$has-tip-font-weight: $global-weight-bold;
+$has-tip-font-weight: $global-weight-normal;
 $has-tip-border-bottom: dotted 1px $medium-gray;
 $tooltip-background-color: $black;
 $tooltip-color: $white;

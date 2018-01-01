@@ -10,6 +10,7 @@ import Trends from './pages/Trends'
 import Social from './pages/Social'
 import Coins from './pages/Coins'
 import News from './pages/News'
+import Research from './pages/Research'
 import Markets from './pages/Markets'
 
 /**
@@ -36,7 +37,8 @@ const pageFunctions = {
   Coins: Coins,
   Social: Social,
   Markets: Markets,
-  News: News
+  News: News,
+  Research: Research
 }
 
 /**

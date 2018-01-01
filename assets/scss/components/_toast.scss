@@ -1,0 +1,11 @@
+.toast {
+  width: auto;
+  background: #222;
+  color: white;
+  font-weight: 600;
+  top: inherit !important;
+  bottom: 100px !important;
+  &:focus {
+    outline: none;
+  }
+}
