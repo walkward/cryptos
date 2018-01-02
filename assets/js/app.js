@@ -2,7 +2,7 @@
 import './vendor/foundation-core.js'
 import rivets from 'rivets'
 // import updateData from './utils/updateData'
-import data from './utils/data'
+import data from './utils/getData'
 import params from './utils/params'
 import tools from './lib/tools'
 import Home from './pages/Home'

@@ -22,6 +22,13 @@ export default function () {
     rivets.formatters.divide = function (value, divisor) {
       value = Big(value)
       divisor = Big(divisor)
+      return divisor.div(value)
+    }
+
+    // Create percentage
+    rivets.formatters.percentage = function (value, divisor) {
+      value = Big(value)
+      divisor = Big(divisor)
       return divisor.div(value).times(100).toFixed(2) + '%'
     }
 

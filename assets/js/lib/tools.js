@@ -1,5 +1,5 @@
 import rivetsConfig from '../vendor/rivetsConfig'
-import data from '../utils/data'
+import getData from '../utils/getData'
 
 export default function () {
   const settings = {
@@ -12,7 +12,7 @@ export default function () {
 
   rivetsConfig()
 
-  data.price(['BTC'], (data) => {
+  getData.price(['BTC'], (data) => {
     cryptos.price.btc = data.USD
     let input = { sats: 100 }
 
@@ -22,7 +22,7 @@ export default function () {
     })
   })
 
-  data.usd(['BTC,ETH'], (data) => {
+  getData.usd(['BTC,ETH'], (data) => {
     cryptos.converters = data
     // let input = { value: 1 }
 

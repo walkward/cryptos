@@ -1,7 +1,7 @@
 import Promise from 'promise-polyfill'
 import rivetsConfig from '../vendor/rivetsConfig'
 import tables from '../lib/tables'
-import data from '../utils/data'
+import getData from '../utils/getData'
 import _ from 'lodash'
 
 export default function () {
@@ -14,7 +14,7 @@ export default function () {
     rivetsConfig()
 
     // Get the data before executing anything else
-    data.coins((data) => {
+    getData.coins((data) => {
       cryptos.coins = _.chain(data.Data)
         .values()
         .map((o) => {

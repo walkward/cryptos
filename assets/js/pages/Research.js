@@ -1,9 +1,7 @@
 import Promise from 'promise-polyfill'
 import rivetsConfig from '../vendor/rivetsConfig'
-import data from '../utils/data'
-import toast from '../utils/toast'
-import Big from 'big.js'
-import _ from 'lodash'
+import getData from '../utils/getData'
+import saveData from '../utils/saveData'
 
 export default function () {
   return new Promise((resolve, reject) => {
@@ -19,14 +17,14 @@ export default function () {
 
     let getResearchData = (researchId) => {
       // Get the data before executing anything else
-      data.research(researchId, (res) => {
+      getData.research(researchId, (res) => {
         cryptos.research = res.data.Coin
 
         // Getting the price for the current currency
         const getPrice = () => {
           return new Promise((resolve, reject) => {
-            data.price([cryptos.research.ticker], (res) => {
-              cryptos.price[cryptos.research.ticker] = res.USD
+            getData.coin([cryptos.research.name], (res) => {
+              cryptos.researchCoin = res[0]
               resolve()
             })
           })
@@ -36,7 +34,7 @@ export default function () {
           return rivets.bind($(settings.selectors.rivetsSelector), {
             research: cryptos.research,
             ratingSum: 0,
-            tickerPrice: cryptos.price[cryptos.research.ticker]
+            coin: cryptos.researchCoin
           })
         }
 
@@ -46,6 +44,16 @@ export default function () {
         })
       })
     }
+
+    // Save keystroke event
+    function KeyPress (e) {
+      let evtobj = window.event ? event : e
+      if (evtobj.keyCode === 83 && evtobj.ctrlKey) {
+        let pageData = $(settings.selectors.researchForm).serializeArray()
+        saveData.research(pageData)
+      }
+    }
+    document.onkeydown = KeyPress
 
     // If an ID exists within the params, then we'll get the data
     if (typeof cryptos.params.id !== 'undefined') getResearchData(cryptos.params.id)
@@ -58,26 +66,8 @@ export default function () {
     // Save data on button click
     $(settings.selectors.saveForm).on('click', function (evt) {
       evt.preventDefault()
-      // Assign the object ID
-      let formData = 'id:' + '\"' + cryptos.params.id + '\",'
-
-      // Check if value is string or number and handle accordingly
-      const formatData = (o) => {
-        if (o.value === '') return ''
-        else if (/^((?=[\d\.]).)*$/.test(o.value)) return o.name + ':' + Big(o.value) + ','
-        else return o.name + ':\"' + o.value + '\",'
-      }
-
-      // Create the graphQL string of new values
-      _.map($(settings.selectors.researchForm).serializeArray(), (o) => { formData = formData + formatData(o) })
-
-      // Create the variables which will be passed to our graphQL query
-      let variables = JSON.stringify({ 'query': 'mutation { updateCoin(' + formData.slice(0, formData.length - 1) + ') { id url wPUrl } } ' })
-
-      data.saveResearch(variables, (data) => {
-        if (data.errors) alert('An error has occured while saving the data: ' + data.errors[0].message)
-        else toast('Saved Data')
-      })
+      let pageData = $(settings.selectors.researchForm).serializeArray()
+      saveData.research(pageData)
     })
   })
 }

@@ -1,6 +1,6 @@
 import Promise from 'promise-polyfill'
 import rivetsConfig from '../vendor/rivetsConfig'
-import data from '../utils/data'
+import getData from '../utils/getData'
 import tables from '../lib/tables'
 
 export default function () {
@@ -13,7 +13,7 @@ export default function () {
     rivetsConfig()
 
     // Get the data before executing anything else
-    data.news(cryptos.params.query, cryptos.params.page, (data) => {
+    getData.news(cryptos.params.query, cryptos.params.page, (data) => {
       cryptos.news = data.articles
 
       const bindRivets = function () {
