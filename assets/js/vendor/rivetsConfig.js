@@ -49,6 +49,11 @@ export default function () {
       return _.truncate(value, {'length': chars})
     }
 
+    // Format Textarea
+    rivets.formatters.textarea = function (value) {
+      return value.replace(/<br \/>?/g, '\n')
+    }
+
     // Check if this is a valid url
     rivets.formatters.isUrl = function (value) {
       return /^(http)/.test(value)

@@ -28,7 +28,7 @@ const research = (pageData) => {
   const formatData = (o) => {
     if (o.value === '') return ''
     else if (/^((?=[\d\.]).)*$/.test(o.value)) return o.name + ':' + Big(o.value) + ','
-    else return o.name + ':\"' + o.value + '\",'
+    else return o.name + ':\"' + o.value.replace(/\n\r?/g, '<br />') + '\",'
   }
 
   // Create the graphQL string of new values
