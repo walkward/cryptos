@@ -48,6 +48,7 @@ function usd (symbols, handleData) {
 
 function research (id, handleData) {
   const apiKey = localStorage.getItem('myKey')
+  if (!apiKey) return
   $.ajax({
     'async': true,
     'crossDomain': true,

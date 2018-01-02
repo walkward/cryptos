@@ -5,6 +5,7 @@ import getData from '../utils/getData'
 
 const saveResearch = (researchData, handleData) => {
   const apiKey = localStorage.getItem('myKey')
+  if (!apiKey) return
   $.ajax({
     'async': true,
     'crossDomain': true,

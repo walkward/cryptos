@@ -42,6 +42,7 @@ export default function () {
 
   // Save apiKey
   $(settings.selectors.apiKeySave).on('click', function () {
+    console.log('clicked')
     const key = $(settings.selectors.apiKeyInput).val()
     apiKey(key)
   })
