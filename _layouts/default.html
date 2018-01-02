@@ -2,7 +2,6 @@
 <html>
   {% include head.html %}
   <body id="{{ page.id }}" class="{{ page.name | remove: 'html' | slugify }}-page" >
-    {% include navigation.html %}
     {% include tools/tools.html %}
     <div class="off-canvas-content" data-off-canvas-content>
       {% include toolbar.html %}
@@ -10,7 +9,8 @@
         {{ content }}
       </main>
     </div>
-    <div class="reveal callout padding-1 toast" id="toastModal" data-reveal data-overlay="false" data-reset-on-close="true" data-btm-offset-pct="10"></div>
+    <div class="reveal callout padding-1 toast" id="toastModal" data-reveal data-overlay="false" data-reset-on-close="true"></div>
+    {% include pageProps.html %}
     {% include scripts.html %}
   </body>
 </html>

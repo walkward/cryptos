@@ -1,0 +1,31 @@
+<h4 class="primary-color font-bold">Coin Rating</h4>
+<table>
+  <tr>
+    <td class="text-right"><span data-tooltip title="0=Incompetent&#13; 5=Semiproven&#13; 10=Fortune 500 quality">Management:</span></td>
+    <td><input class="margin-0" type="number" name="mgmtRating" rv-value="research.mgmtRating"></td>
+  </tr>
+  <tr>
+    <td class="text-right"><span data-tooltip title="0=Lackluster&#13; 5=Medeocre Solution&#13; 10=Visionary">White Paper:</span></td>
+    <td><input class="margin-0" type="number" name="wPRating" rv-value="research.wPRating"></td>
+  </tr>
+  <tr>
+    <td class="text-right"><span data-tooltip title="0=Off the map&#13; 5=Some Coverage&#13; 10=Lambos!">Hype:</span></td>
+    <td><input class="margin-0" type="number" name="hypeRating" rv-value="research.hypeRating"></td>
+  </tr>
+  <tr>
+    <td class="text-right"><span data-tooltip title="0=Widespread Hate&#13; 5=Some Hodlers&#13; 10=Cult Following">Loyalty:</span></td>
+    <td><input class="margin-0" type="number" name="loyaltyRating" rv-value="research.loyaltyRating"></td>
+  </tr>
+  <tr>
+    <td class="text-right"><span data-tooltip title="0=Incompetent&#13; 5=Semiproven&#13; 10=Genius">Developers:</span></td>
+    <td><input class="margin-0" type="number" name="devRating" rv-value="research.devRating"></td>
+  </tr>
+  <tr>
+    <td class="text-right"><span data-tooltip title="0=Useless&#13; 5=Some Use Case&#13; 10=Revolutionary">Product:</span></td>
+    <td><input class="margin-0" type="number" name="productRating" rv-value="research.productRating"></td>
+  </tr>
+  <tr>
+    <td class="text-right"><strong>Total:</strong></td>
+    <td><strong rv-text="ratingSum | sum research.mgmtRating | sum research.wPRating | sum research.hypeRating | sum research.loyaltyRating | sum research.devRating | sum research.productRating"></strong></td>
+  </tr>
+</table>

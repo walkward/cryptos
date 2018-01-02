@@ -1,63 +1,46 @@
-links:
-  - title: Dashboard
-    url: /
-  - title: Coins
-    url: /coins/
-  - title: Research
-    url: /research/
-  - title: Trends
-    subfolderitems:
-      - page: Bitcoin
-        url: /trends/?name=Bitcoin
-      - page: Verge
-        url: /trends/?name=Verge
-      - page: Ethlend
-        url: /trends/?name=Ethlend
-      - page: Tronix
-        url: /trends/?name=Tronix
-      - page: Salt
-        url: /trends/?name=Salt%20Lending
-  - title: Social
-    subfolderitems:
-      - page: Bitcoin
-        url: /social/?name=bitcoin&ticker=947169875327193088
-      - page: Verge
-        url: /social/?name=vergecurrency&ticker=947171515497291776
-      - page: Ethlend
-        url: /social/?name=ethlend1&ticker=947171686633189376
-      - page: Tronix
-        url: /social/?name=TronCommunity&ticker=947171124562968576
-      - page: Salt
-        url: /social/?name=SaltLending&ticker=947171353785909248
-  - title: News
-    subfolderitems:
-      - page: Bitcoin
-        url: /news/?query=Bitcoin&page=1
-      - page: Verge
-        url: /news/?query=Verge%20Crypto&page=1
-      - page: Ethlend
-        url: /news/?query=Ethlend&page=1
-      - page: Tronix
-        url: /news/?query=Tronix&page=1
-      - page: Salt
-        url: /news/?query=Salt%20Lending&page=1
-  - title: Time Zones
-    url: /timezones/
-
 research:
+  - name: Bitcoin
+    id: cjbx57gcg30vs0156ijycompn
+    social:
+    news:
+    trends: /trends/?name=Bitcoin
   - name: Ethereum
     id: cjbwebhlt2upf0156avwrhdtr
+    social:
+    news:
+    trends: /trends/?name=Ethereum
   - name: Ripple
     id: cjbwhcn872v220156ga04c1ab
+    social:
+    news:
+    trends: /trends/?name=Ripple
   - name: Tronix
     id: cjbwhbyiu2v1u0156n9onrwff
+    social:
+    news:
+    trends: /trends/?name=Tronix
   - name: Salt Lending
     id: cjbwhbpm52v1p015632se5yq6
+    social:
+    news:
+    trends: /trends/?name=Salt%20Lending
   - name: Verge
     id: cjbwhcy0p2v260156ps5u6dv4
+    social:
+    news:
+    trends: /trends/?name=Verge
   - name: Ethlend
     id: cjbwhcecz2v1y0156hyhkvie0
+    social:
+    news:
+    trends: /trends/?name=Ethlend
   - name: Cardano
     id: cjbwh9tpt2v180156og8gaznv
+    social:
+    news:
+    trends: /trends/?name=Cardano
   - name: FunFair
     id: cjbwhawyq2v1h01561uaaeons
+    social:
+    news:
+    trends: /trends/?name=FunFair

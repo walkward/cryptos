@@ -13,9 +13,9 @@ permalink: /research/
       </div>
       <div class="small-12 large-4 cell flex-container">
         <select id="researchSelector" class="" name="">
-            <option value="" selected="selected" disabled="disabled">Select Coin</option>
+          <option value="" selected="selected" disabled="disabled">Select Coin</option>
           {% for item in site.data.navigation.research %}
-            <option value="{{ item.id }}">{{ item.name }}</option>
+          <option value="{{ item.id }}">{{ item.name }}</option>
           {% endfor %}
         </select>
         <div>
@@ -28,148 +28,22 @@ permalink: /research/
 
     <div class="grid-x grid-padding-x" rv-show="research.name" style="display:none;">
       <div class="large-8 cell">
-        <h4 class="primary-color font-bold">Management Review</h4>
-        <textarea name="mgmtReview" rows="4" rv-text="research.mgmtReview"></textarea>
-
-        <h4 class="primary-color font-bold">White Paper Review</h4>
-        <textarea name="wPReview" rows="4" rv-text="research.wPReview"></textarea>
-
-        <h4 class="primary-color font-bold">Product Review</h4>
-        <textarea name="productReview" rows="4" rv-text="research.productReview"></textarea>
-
-        <h4 class="primary-color font-bold">News & Events</h4>
-        <textarea name="newsEvents" rows="4" rv-text="research.newsEvents"></textarea>
+        {% include research/textareas.html %}
 
         <div class="grid-x grid-padding-x" rv-show="research.name" style="display:none;">
           <div class="large-6 cell">
-            <h4 class="primary-color font-bold">Links</h4>
-            <div>
-              <table>
-                <tr>
-                  <td><a class="button small-bold-text secondary margin-0 expanded" target="_blank" rv-href="research.url">Website</a></td>
-                  <td><input class="margin-0" type="text" name="url" rv-value="research.url"></td>
-                </tr>
-                <tr>
-                  <td><a class="button small-bold-text secondary margin-0 expanded" target="_blank" rv-href="research.wPUrl">White Paper</a></td>
-                  <td><input class="margin-0" type="text" name="wPUrl" rv-value="research.wPUrl"></td>
-                </tr>
-                <tr>
-                  <td><a class="button small-bold-text secondary margin-0 expanded" target="_blank" rv-href="research.blocksUrl">Blocks</a></td>
-                  <td><input class="margin-0" type="text" name="blockUrl" rv-value="research.blockUrl"></td>
-                </tr>
-                <tr>
-                  <td colspan="2"><a class="button small-bold-text secondary expanded margin-0" onclick="window.open('https://www.cryptocompare.com/coins/'+cryptos.research.ticker.toLowerCase()+'/overview/USD', '_blank')">Crypto Compare</a></td>
-                </tr>
-                <tr>
-                  <td colspan="2"><a class="button small-bold-text secondary expanded margin-0" onclick="window.open('https://coincheckup.com/coins/'+cryptos.research.name+'/charts', '_blank')">Coin Checkup</a></td>
-                </tr>
-              </table>
-            </div>
+            {% include research/links.html %}
           </div>
           <div class="large-6 cell">
-            <h4 class="primary-color font-bold">Stats</h4>
-            <table>
-              <tr>
-                <td class="text-right">ICO Date:</td>
-                <td><input class="margin-0" type="text" name="icoDate" rv-value="research.icoDate"></td>
-              </tr>
-              <tr>
-                <td class="text-right">Developer Qty:</td>
-                <td><input class="margin-0" type="text" name="devQty" rv-value="research.devQty"></td>
-              </tr>
-              <tr>
-                <td class="text-right">Team Qty:</td>
-                <td><input class="margin-0" type="text" name="teamQty" rv-value="research.teamQty"></td>
-              </tr>
-              <tr>
-                <td class="text-right">Peer Coins:</td>
-                <td><input class="margin-0" type="text" name="peers" rv-value="research.peers"></td>
-              </tr>
-            </table>
+            {% include research/stats.html %}
           </div>
         </div>
       </div>
 
       <div class="large-4 cell">
-        <h4 class="primary-color font-bold">Price Analysis</h4>
-        <table>
-          <tr>
-            <td class="text-right">Price:</td>
-            <td rv-text="coin.price_usd"></td>
-          </tr>
-          <tr>
-            <td class="text-right">mCap:</td>
-            <td rv-text="coin.market_cap_usd | number"></td>
-          </tr>
-          <tr>
-            <td class="text-right">Floor Price:</td>
-            <td><input class="margin-0" type="number" step="0.01" name="floorPrice" rv-value="research.floorPrice"></td>
-          </tr>
-          <tr>
-            <td class="text-right">Target Price:</td>
-            <td><input class="margin-0" type="number" step="0.01" name="targetPrice" rv-value="research.targetPrice"></td>
-          </tr>
-          <tr>
-            <td class="text-right">Potential:</td>
-            <td rv-text="coin.price_usd | percentage research.targetPrice"></td>
-          </tr>
-          <tr>
-            <td class="text-right">Potential mCap:</td>
-            <td rv-text="coin.price_usd | divide research.targetPrice | multiply coin.market_cap_usd | number"></td>
-          </tr>
-        </table>
-
-        <h4 class="primary-color font-bold">Trading</h4>
-        <table>
-          <tr>
-            <td class="text-right">Price 1hr:</td>
-            <td><span rv-text="coin.percent_change_1h"></span>%</td>
-          </tr>
-          <tr>
-            <td class="text-right">Price 24hr:</td>
-            <td><span rv-text="coin.percent_change_24h"></span>%</td>
-          </tr>
-          <tr>
-            <td class="text-right">Price 7d:</td>
-            <td><span rv-text="coin.percent_change_7d"></span>%</td>
-          </tr>
-          <tr>
-            <td class="text-right">24hr Volume:</td>
-            <td rv-text="coin.24h_volume_usd | number"></td>
-          </tr>
-        </table>
-
-        <h4 class="primary-color font-bold">Coin Rating</h4>
-        <table>
-          <tr>
-            <td class="text-right"><span data-tooltip title="0=Incompetent&#13; 5=Semiproven&#13; 10=Fortune 500 quality">Management:</span></td>
-            <td><input class="margin-0" type="number" name="mgmtRating" rv-value="research.mgmtRating"></td>
-          </tr>
-          <tr>
-            <td class="text-right"><span data-tooltip title="0=Lackluster&#13; 5=Medeocre Solution&#13; 10=Visionary">White Paper:</span></td>
-            <td><input class="margin-0" type="number" name="wPRating" rv-value="research.wPRating"></td>
-          </tr>
-          <tr>
-            <td class="text-right"><span data-tooltip title="0=Off the map&#13; 5=Some Coverage&#13; 10=Lambos!">Hype:</span></td>
-            <td><input class="margin-0" type="number" name="hypeRating" rv-value="research.hypeRating"></td>
-          </tr>
-          <tr>
-            <td class="text-right"><span data-tooltip title="0=Widespread Hate&#13; 5=Some Hodlers&#13; 10=Cult Following">Loyalty:</span></td>
-            <td><input class="margin-0" type="number" name="loyaltyRating" rv-value="research.loyaltyRating"></td>
-          </tr>
-          <tr>
-            <td class="text-right"><span data-tooltip title="0=Incompetent&#13; 5=Semiproven&#13; 10=Genius">Developers:</span></td>
-            <td><input class="margin-0" type="number" name="devRating" rv-value="research.devRating"></td>
-          </tr>
-          <tr>
-            <td class="text-right"><span data-tooltip title="0=Useless&#13; 5=Some Use Case&#13; 10=Revolutionary">Product:</span></td>
-            <td><input class="margin-0" type="number" name="productRating" rv-value="research.productRating"></td>
-          </tr>
-          <tr>
-            <td class="text-right"><strong>Total:</strong></td>
-            <td><strong rv-text="ratingSum | sum research.mgmtRating | sum research.wPRating | sum research.hypeRating | sum research.loyaltyRating | sum research.devRating | sum research.productRating"></strong></td>
-          </tr>
-        </table>
+        {% include research/price.html %}
+        {% include research/trading.html %}
+        {% include research/rating.html %}
       </div>
     </div>
 

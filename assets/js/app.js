@@ -1,17 +1,10 @@
 // import whatInput from 'what-input';
 import './vendor/foundation-core.js'
 import rivets from 'rivets'
-// import updateData from './utils/updateData'
-import data from './utils/getData'
 import params from './utils/params'
 import tools from './lib/tools'
 import Home from './pages/Home'
-import Trends from './pages/Trends'
-import Social from './pages/Social'
-import Coins from './pages/Coins'
-import News from './pages/News'
 import Research from './pages/Research'
-import Markets from './pages/Markets'
 
 /**
  * Methods available to the browser
@@ -21,7 +14,6 @@ window.rivets = rivets
 window.$ = $
 window.cryptos = {
   params: params,
-  data: data,
   price: {},
   marketData: [],
   coins: []
@@ -33,11 +25,6 @@ window.cryptos = {
  */
 const pageFunctions = {
   Home: Home,
-  Trends: Trends,
-  Coins: Coins,
-  Social: Social,
-  Markets: Markets,
-  News: News,
   Research: Research
 }
 

@@ -26,10 +26,11 @@ export default function () {
     }
 
     // Create percentage
-    rivets.formatters.percentage = function (value, divisor) {
+    rivets.formatters.potential = function (value, divisor) {
+      console.log(value, divisor)
       value = Big(value)
       divisor = Big(divisor)
-      return divisor.div(value).times(100).toFixed(2) + '%'
+      return divisor.div(value).times(100).minus(100).toFixed(2) + '%'
     }
 
     // Formate Date

@@ -3,8 +3,10 @@
   background: #222;
   color: white;
   font-weight: 600;
-  top: inherit !important;
-  bottom: 100px !important;
+  top: auto !important;
+  bottom: 50px !important;
+  min-height: 0px !important;
+  height: auto !important;
   &:focus {
     outline: none;
   }
