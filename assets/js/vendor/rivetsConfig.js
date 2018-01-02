@@ -23,6 +23,14 @@ export default function () {
       return value.plus(added)
     }
 
+    // Calculate Value of Holdings
+    rivets.formatters.calcValue = function (value, ticker) {
+      let base = Big(1)
+      let price = Big(cryptos.researchPrices[ticker])
+      value = value !== null ? Big(value) : Big(0)
+      return '$' + base.div(price).times(value).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+    }
+
     // Multiply numbers
     rivets.formatters.multiply = function (value, multiplier) {
       value = Big(value)

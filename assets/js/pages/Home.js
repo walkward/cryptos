@@ -2,6 +2,7 @@ import Promise from 'promise-polyfill'
 import rivetsConfig from '../vendor/rivetsConfig'
 import getData from '../utils/getData'
 import tables from '../lib/tables'
+import _ from 'lodash'
 
 export default function () {
   return new Promise((resolve, reject) => {
@@ -16,15 +17,21 @@ export default function () {
     getData.allResearch((data) => {
       cryptos.allResearch = data.data.allCoins
 
-      const bindRivets = function () {
-        return rivets.bind($(settings.selectors.tableSelector), {
-          allResearch: cryptos.allResearch
-        })
-      }
+      // Get prices for each coin before we bind the rivets
+      let priceSymbols = _.map(cryptos.allResearch, (o) => { return o.ticker })
+      getData.usd(priceSymbols, (data) => {
+        cryptos.researchPrices = data
 
-      $.when(bindRivets()).done(function () {
-        tables.init(settings.selectors.tableSelector)
-        resolve('success')
+        const bindRivets = function () {
+          return rivets.bind($(settings.selectors.tableSelector), {
+            allResearch: cryptos.allResearch
+          })
+        }
+
+        $.when(bindRivets()).done(function () {
+          tables.init(settings.selectors.tableSelector)
+          resolve('success')
+        })
       })
     })
   })

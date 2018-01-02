@@ -27,7 +27,6 @@ export default function () {
 
   getData.usd(['BTC,ETH'], (data) => {
     cryptos.converters = data
-    // let input = { value: 1 }
 
     rivets.bind($(settings.selectors.usdToEth), {
       converters: cryptos.converters,

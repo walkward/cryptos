@@ -137,7 +137,7 @@
 </div>
 
       <main id="main" data-page="Home">
-        <div class="grid-container">
+        <div class="grid-container" id="allResearch">
 
   <div class="grid-x grid-padding-x">
     <div class="large-12 cell">
@@ -145,7 +145,7 @@
     </div>
   </div>
 
-  <table id="allResearch" class="tablesorter" rv-show="allResearch.0" style="display:none;">
+  <table class="tablesorter" rv-show="allResearch.0" style="display:none;">
     <thead>
       <tr>
         <th>Ticker</th>
@@ -160,6 +160,7 @@
         <th>Floor Price</th>
         <th>Target Price</th>
         <th>Holdings</th>
+        <th>Value</th>
       </tr>
     </thead>
     <tbody>
@@ -176,6 +177,7 @@
         <td rv-text="item.floorPrice"></td>
         <td rv-text="item.targetPrice"></td>
         <td rv-text="item.holdings"></td>
+        <td rv-text="item.holdings | calcValue item.ticker"></td>
       </tr>
     </tbody>
   </table>
