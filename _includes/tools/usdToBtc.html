@@ -1,0 +1,18 @@
+<div class="grid-x grid-padding-x cell" id="usdToBtc">
+  <div class="large-12 cell">
+    <h4>USD to BTC</h4>
+    <hr>
+    <table class="unstriped margin-0">
+      <tbody>
+        <tr>
+          <td class="text-right">USD:</td>
+          <td><input class="margin-0" step="0.001" type="number" name="" rv-value="btcInput"></td>
+        </tr>
+        <tr>
+          <td class="text-right">BTC:</td>
+          <td rv-text="btcInput | multiply converters.BTC"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

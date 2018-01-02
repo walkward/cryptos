@@ -109,7 +109,7 @@
   <br>
 
   <!-- Menu -->
-  <div class="grid-x grid-padding-x cell">
+  <div class="grid-x grid-padding-x cell" id="satsToUsd">
   <div class="large-12 cell">
     <h4>SATS to USD</h4>
     <hr>
@@ -122,6 +122,46 @@
         <tr>
           <td class="text-right">USD:</td>
           <td rv-text="input.sats | satsToUsd"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  <br>
+  <div class="grid-x grid-padding-x cell" id="usdToEth">
+  <div class="large-12 cell">
+    <h4>USD to ETH</h4>
+    <hr>
+    <table class="unstriped margin-0">
+      <tbody>
+        <tr>
+          <td class="text-right">USD:</td>
+          <td><input class="margin-0" step="0.001" type="number" name="" rv-value="ethInput"></td>
+        </tr>
+        <tr>
+          <td class="text-right">ETH:</td>
+          <td rv-text="ethInput | multiply converters.ETH"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  <br>
+  <div class="grid-x grid-padding-x cell" id="usdToBtc">
+  <div class="large-12 cell">
+    <h4>USD to BTC</h4>
+    <hr>
+    <table class="unstriped margin-0">
+      <tbody>
+        <tr>
+          <td class="text-right">USD:</td>
+          <td><input class="margin-0" step="0.001" type="number" name="" rv-value="btcInput"></td>
+        </tr>
+        <tr>
+          <td class="text-right">BTC:</td>
+          <td rv-text="btcInput | multiply converters.BTC"></td>
         </tr>
       </tbody>
     </table>
@@ -202,13 +242,25 @@
 
         <h4 class="primary-color font-bold">Links</h4>
         <div class="button-group secondary stacked-for-small">
-          <a class="button small-bold-text" target="_blank" rv-href="research.cryptoComareUrl">Crypto Compare</a>
-          <a class="button small-bold-text" target="_blank" rv-href="research.cryptoComareUrl">Coin Checkup</a>
+          <a class="button small-bold-text" onclick="window.open('https://www.cryptocompare.com/coins/'+cryptos.research.ticker.toLowerCase()+'/overview/USD', '_blank')">Crypto Compare</a>
+          <a class="button small-bold-text" onclick="window.open('https://coincheckup.com/coins/'+cryptos.research.name+'/charts', '_blank')">Coin Checkup</a>
         </div>
-        <div class="button-group secondary stacked-for-small">
-          <a class="button small-bold-text" target="_blank" rv-href="research.wPUrl">White Paper</a>
-          <a class="button small-bold-text" target="_blank" rv-href="research.url">Website</a>
-          <a class="button small-bold-text" target="_blank" rv-href="research.blocksUrl">Blocks</a>
+
+        <div>
+          <table>
+            <tr>
+              <td><a class="button small-bold-text secondary margin-0" target="_blank" rv-href="research.url">Website</a></td>
+              <td><input class="margin-0" type="text" name="url" rv-value="research.url"></td>
+            </tr>
+            <tr>
+              <td><a class="button small-bold-text secondary margin-0" target="_blank" rv-href="research.wPUrl">White Paper</a></td>
+              <td><input class="margin-0" type="text" name="wPUrl" rv-value="research.wPUrl"></td>
+            </tr>
+            <tr>
+              <td><a class="button small-bold-text secondary margin-0" target="_blank" rv-href="research.blocksUrl">Blocks</a></td>
+              <td><input class="margin-0" type="text" name="blockUrl" rv-value="research.blockUrl"></td>
+            </tr>
+          </table>
         </div>
       </div>
 

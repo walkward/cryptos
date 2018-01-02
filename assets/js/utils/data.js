@@ -34,6 +34,18 @@ function price (symbols, handleData) {
   })
 }
 
+function usd (symbols, handleData) {
+  symbols = _.join(symbols, ',')
+  $.ajax({
+    url: 'https://min-api.cryptocompare.com/data/price?fsym=USD&tsyms=' + symbols,
+    method: 'GET',
+    dataType: 'json',
+    success: function (data) {
+      handleData(data)
+    }
+  })
+}
+
 function research (id, handleData) {
   $.ajax({
     'async': true,
@@ -45,7 +57,7 @@ function research (id, handleData) {
       'content-type': 'application/json'
     },
     'processData': false,
-    'data': '{"query":"{Coin(id:\\"' + id + '\\"){name ticker blockUrl cryptoComareUrl coinCheckUpUrl floorPrice hypeRating mgmtRating wPRating mgmtReview productReview productRating loyaltyRating devRating devQty teamQty newsEvents targetPrice url wPReview wPUrl peers}}"}'
+    'data': '{"query":"{Coin(id:\\"' + id + '\\"){name ticker icoDate blockUrl floorPrice hypeRating mgmtRating wPRating mgmtReview productReview productRating loyaltyRating devRating devQty teamQty newsEvents targetPrice url wPReview wPUrl peers}}"}'
   }).done(function (data) {
     handleData(data)
   })
@@ -92,5 +104,6 @@ module.exports = {
   price: price,
   news: news,
   research: research,
-  saveResearch: saveResearch
+  saveResearch: saveResearch,
+  usd: usd
 }

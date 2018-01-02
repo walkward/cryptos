@@ -11,11 +11,18 @@ export default function () {
       return value.plus(added)
     }
 
+    // Multiply numbers
+    rivets.formatters.multiply = function (value, multiplier) {
+      value = Big(value)
+      multiplier = Big(multiplier)
+      return multiplier.times(value)
+    }
+
     // Divide numbers
-    rivets.formatters.divided = function (value, divisor) {
+    rivets.formatters.divide = function (value, divisor) {
       value = Big(value)
       divisor = Big(divisor)
-      return value.div(divisor)
+      return divisor.div(value).times(100).toFixed(2) + '%'
     }
 
     // Formate Date

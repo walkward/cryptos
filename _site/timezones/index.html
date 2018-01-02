@@ -109,7 +109,7 @@
   <br>
 
   <!-- Menu -->
-  <div class="grid-x grid-padding-x cell">
+  <div class="grid-x grid-padding-x cell" id="satsToUsd">
   <div class="large-12 cell">
     <h4>SATS to USD</h4>
     <hr>
@@ -122,6 +122,46 @@
         <tr>
           <td class="text-right">USD:</td>
           <td rv-text="input.sats | satsToUsd"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  <br>
+  <div class="grid-x grid-padding-x cell" id="usdToEth">
+  <div class="large-12 cell">
+    <h4>USD to ETH</h4>
+    <hr>
+    <table class="unstriped margin-0">
+      <tbody>
+        <tr>
+          <td class="text-right">USD:</td>
+          <td><input class="margin-0" step="0.001" type="number" name="" rv-value="ethInput"></td>
+        </tr>
+        <tr>
+          <td class="text-right">ETH:</td>
+          <td rv-text="ethInput | multiply converters.ETH"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  <br>
+  <div class="grid-x grid-padding-x cell" id="usdToBtc">
+  <div class="large-12 cell">
+    <h4>USD to BTC</h4>
+    <hr>
+    <table class="unstriped margin-0">
+      <tbody>
+        <tr>
+          <td class="text-right">USD:</td>
+          <td><input class="margin-0" step="0.001" type="number" name="" rv-value="btcInput"></td>
+        </tr>
+        <tr>
+          <td class="text-right">BTC:</td>
+          <td rv-text="btcInput | multiply converters.BTC"></td>
         </tr>
       </tbody>
     </table>

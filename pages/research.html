@@ -42,13 +42,25 @@ permalink: /research/
 
         <h4 class="primary-color font-bold">Links</h4>
         <div class="button-group secondary stacked-for-small">
-          <a class="button small-bold-text" target="_blank" rv-href="research.cryptoComareUrl">Crypto Compare</a>
-          <a class="button small-bold-text" target="_blank" rv-href="research.cryptoComareUrl">Coin Checkup</a>
+          <a class="button small-bold-text" onclick="window.open('https://www.cryptocompare.com/coins/'+cryptos.research.ticker.toLowerCase()+'/overview/USD', '_blank')">Crypto Compare</a>
+          <a class="button small-bold-text" onclick="window.open('https://coincheckup.com/coins/'+cryptos.research.name+'/charts', '_blank')">Coin Checkup</a>
         </div>
-        <div class="button-group secondary stacked-for-small">
-          <a class="button small-bold-text" target="_blank" rv-href="research.wPUrl">White Paper</a>
-          <a class="button small-bold-text" target="_blank" rv-href="research.url">Website</a>
-          <a class="button small-bold-text" target="_blank" rv-href="research.blocksUrl">Blocks</a>
+
+        <div>
+          <table>
+            <tr>
+              <td><a class="button small-bold-text secondary margin-0" target="_blank" rv-href="research.url">Website</a></td>
+              <td><input class="margin-0" type="text" name="url" rv-value="research.url"></td>
+            </tr>
+            <tr>
+              <td><a class="button small-bold-text secondary margin-0" target="_blank" rv-href="research.wPUrl">White Paper</a></td>
+              <td><input class="margin-0" type="text" name="wPUrl" rv-value="research.wPUrl"></td>
+            </tr>
+            <tr>
+              <td><a class="button small-bold-text secondary margin-0" target="_blank" rv-href="research.blocksUrl">Blocks</a></td>
+              <td><input class="margin-0" type="text" name="blockUrl" rv-value="research.blockUrl"></td>
+            </tr>
+          </table>
         </div>
       </div>
 

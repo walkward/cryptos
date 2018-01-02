@@ -63,8 +63,9 @@ export default function () {
 
       // Check if value is string or number and handle accordingly
       const formatData = (o) => {
-        if (!/\d/.test(o.value)) return o.name + ':\"' + o.value + '\",'
-        else return o.name + ':' + Big(o.value) + ','
+        if (o.value === '') return ''
+        else if (/^((?=[\d\.]).)*$/.test(o.value)) return o.name + ':' + Big(o.value) + ','
+        else return o.name + ':\"' + o.value + '\",'
       }
 
       // Create the graphQL string of new values
@@ -74,7 +75,9 @@ export default function () {
       let variables = JSON.stringify({ 'query': 'mutation { updateCoin(' + formData.slice(0, formData.length - 1) + ') { id url wPUrl } } ' })
 
       data.saveResearch(variables, (data) => {
-        toast('Saved Data')
+        console.log(data)
+        if (data.errors) alert('An error has occured while saving the data: ' + data.errors[0].message)
+        else toast('Saved Data')
       })
     })
   })
