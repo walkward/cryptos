@@ -52,7 +52,7 @@ export default function () {
 
     // Update the url when research selector is changed
     $(settings.selectors.researchSelector).on('change', function () {
-      window.location.href = '/research/?id=' + this.value
+      window.location.href = location.origin + location.pathname + '?id=' + this.value
     })
 
     // Save data on button click
@@ -75,7 +75,6 @@ export default function () {
       let variables = JSON.stringify({ 'query': 'mutation { updateCoin(' + formData.slice(0, formData.length - 1) + ') { id url wPUrl } } ' })
 
       data.saveResearch(variables, (data) => {
-        console.log(data)
         if (data.errors) alert('An error has occured while saving the data: ' + data.errors[0].message)
         else toast('Saved Data')
       })
