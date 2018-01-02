@@ -57,7 +57,7 @@ function research (id, handleData) {
       'content-type': 'application/json'
     },
     'processData': false,
-    'data': '{"query":"{Coin(id:\\"' + id + '\\"){name ticker icoDate blockUrl floorPrice hypeRating mgmtRating wPRating mgmtReview productReview productRating loyaltyRating devRating devQty teamQty newsEvents targetPrice url wPReview wPUrl peers}}"}'
+    'data': '{"query":"{Coin(id:\\"' + id + '\\"){name ticker icoDate blockUrl floorPrice hypeRating mgmtRating wPRating mgmtReview productReview productRating loyaltyRating devRating devQty teamQty newsEvents targetPrice url wPReview wPUrl peers recommendation maxAllocation githubUrl}}"}'
   }).done(function (data) {
     handleData(data)
   })

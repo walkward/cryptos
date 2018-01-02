@@ -1,0 +1,24 @@
+.status-wrapper {
+  position: relative;
+}
+
+.status {
+  position: absolute;
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 20px;
+  &.buy {
+    background: get-color(success)
+  }
+  &.hold {
+    background: get-color(warning)
+  }
+  &.sell {
+    background: get-color(alert)
+  }
+}

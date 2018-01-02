@@ -227,7 +227,7 @@
           </div>
           <div class="large-6 cell">
             <h4 class="primary-color font-bold">Stats</h4>
-<table>
+<table class="aligned">
   <tr>
     <td class="text-right">ICO Date:</td>
     <td><input class="margin-0" type="text" name="icoDate" rv-value="research.icoDate"></td>
@@ -251,8 +251,20 @@
       </div>
 
       <div class="large-4 cell">
+        <h4 class="primary-color font-bold">Overview</h4>
+<table class="aligned">
+  <tr>
+    <td class="text-right">Recommendation:</td>
+    <td class="status-wrapper"><input class="margin-0" type="text" name="recommendation" rv-value="research.recommendation"><span rv-html="research.recommendation | recommendation"></span></td>
+  </tr>
+  <tr>
+    <td class="text-right">Max Allocation:</td>
+    <td><input class="margin-0" type="text" name="maxAllocation" rv-value="research.maxAllocation"></td>
+  </tr>
+</table>
+
         <h4 class="primary-color font-bold">Price Analysis</h4>
-<table>
+<table class="aligned">
   <tr>
     <td class="text-right">Price:</td>
     <td rv-text="coin.price_usd"></td>
@@ -280,7 +292,7 @@
 </table>
 
         <h4 class="primary-color font-bold">Trading</h4>
-<table>
+<table class="aligned">
   <tr>
     <td class="text-right">Price 1hr:</td>
     <td><span rv-text="coin.percent_change_1h"></span>%</td>
@@ -300,7 +312,7 @@
 </table>
 
         <h4 class="primary-color font-bold">Coin Rating</h4>
-<table>
+<table class="aligned">
   <tr>
     <td class="text-right"><span data-tooltip title="0=Incompetent&#13; 5=Semiproven&#13; 10=Fortune 500 quality">Management:</span></td>
     <td><input class="margin-0" type="number" name="mgmtRating" rv-value="research.mgmtRating"></td>

@@ -4,6 +4,13 @@ import _ from 'lodash'
 
 export default function () {
   return new Promise((resolve, reject) => {
+    // Color reccomendation
+    rivets.formatters.recommendation = function (value, e) {
+      if (value === 'Buy') return '<span class="status buy"></span>'
+      else if (value === 'Hold') return '<span class="status hold"></span>'
+      else return '<span class="status sell"></span>'
+    }
+
     // Create sum
     rivets.formatters.sum = function (value, added) {
       value = Big(value)
@@ -27,7 +34,6 @@ export default function () {
 
     // Create percentage
     rivets.formatters.potential = function (value, divisor) {
-      console.log(value, divisor)
       value = Big(value)
       divisor = Big(divisor)
       return divisor.div(value).times(100).minus(100).toFixed(2) + '%'

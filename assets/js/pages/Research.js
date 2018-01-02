@@ -18,6 +18,9 @@ export default function () {
     let getResearchData = (researchId) => {
       // Get the data before executing anything else
       getData.research(researchId, (res) => {
+        // error handling
+        if (res.errors) alert(res.errors[0].message)
+        // Assigning global research data object
         cryptos.research = res.data.Coin
 
         // Getting the price for the current currency
