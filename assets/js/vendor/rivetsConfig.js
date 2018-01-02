@@ -51,7 +51,8 @@ export default function () {
 
     // Format Textarea
     rivets.formatters.textarea = function (value) {
-      return value.replace(/<br \/>?/g, '\n')
+      if (/<br \/>?/g.test(value)) return value.replace(/<br \/>?/g, '\n')
+      else return value
     }
 
     // Check if this is a valid url

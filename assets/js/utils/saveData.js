@@ -4,13 +4,14 @@ import _ from 'lodash'
 import getData from '../utils/getData'
 
 const saveResearch = (researchData, handleData) => {
+  const apiKey = localStorage.getItem('myKey')
   $.ajax({
     'async': true,
     'crossDomain': true,
     'url': 'https://api.graph.cool/simple/v1/cjbwdrpss0okf0154rwt7noqf',
     'method': 'POST',
     'headers': {
-      'authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTQ4MjQ1ODMsImNsaWVudElkIjoiY2o2aW1sczYxM215ajAxNjJ6Ym54Z3NnaCIsInByb2plY3RJZCI6ImNqYndkcnBzczBva2YwMTU0cnd0N25vcWYiLCJwZXJtYW5lbnRBdXRoVG9rZW5JZCI6ImNqYndmZzFrNDBxaGgwMTU0eHFubjI5d3kifQ.6i-0oVbbkrRsXj7-msBiMiIRrSRc4JgLeeYBRSFuAAo',
+      'authorization': apiKey,
       'content-type': 'application/json'
     },
     'processData': false,

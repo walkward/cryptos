@@ -1,12 +1,15 @@
 import rivetsConfig from '../vendor/rivetsConfig'
 import getData from '../utils/getData'
+import apiKey from '../utils/apiKey'
 
 export default function () {
   const settings = {
     selectors: {
       usdToEth: '#usdToEth',
       satsToUsd: '#satsToUsd',
-      usdToBtc: '#usdToBtc'
+      usdToBtc: '#usdToBtc',
+      apiKeyInput: '#apiKeyInput',
+      apiKeySave: '#apiKeySave'
     }
   }
 
@@ -35,5 +38,11 @@ export default function () {
       converters: cryptos.converters,
       btcInput: 1.00
     })
+  })
+
+  // Save apiKey
+  $(settings.selectors.apiKeySave).on('click', function () {
+    const key = $(settings.selectors.apiKeyInput).val()
+    apiKey(key)
   })
 }
