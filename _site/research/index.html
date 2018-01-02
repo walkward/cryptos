@@ -287,27 +287,43 @@
 <table class="aligned">
   <tr>
     <td class="text-right">Price:</td>
-    <td rv-text="coin.price_usd"></td>
+    <td colspan="2" rv-text="coin.price_usd"></td>
   </tr>
   <tr>
     <td class="text-right">mCap:</td>
-    <td rv-text="coin.market_cap_usd | number"></td>
+    <td colspan="2" rv-text="coin.market_cap_usd | number"></td>
+  </tr>
+</table>
+
+        <h4 class="primary-color font-bold">Price Targets</h4>
+<table>
+  <tr>
+    <td colspan="2" class="text-right">Floor Price:</td>
+    <td colspan="2"><input class="margin-0" type="number" step="0.01" name="floorPrice" rv-value="research.floorPrice"></td>
   </tr>
   <tr>
-    <td class="text-right">Floor Price:</td>
-    <td><input class="margin-0" type="number" step="0.01" name="floorPrice" rv-value="research.floorPrice"></td>
+    <td>Targets:</td>
+    <td class="text-center">1m:</td>
+    <td class="text-center">1q:</td>
+    <td class="text-center">1y:</td>
   </tr>
   <tr>
-    <td class="text-right">Target Price:</td>
-    <td><input class="margin-0" type="number" step="0.01" name="targetPrice" rv-value="research.targetPrice"></td>
+    <td>Price:</td>
+    <td class="text-center"><input class="text-center margin-0" type="number" step="0.01" name="targetPrice1m" rv-value="research.targetPrice1m"></td>
+    <td class="text-center"><input class="text-center margin-0" type="number" step="0.01" name="targetPrice1q" rv-value="research.targetPrice1q"></td>
+    <td class="text-center"><input class="text-center margin-0" type="number" step="0.01" name="targetPrice1y" rv-value="research.targetPrice1y"></td>
   </tr>
   <tr>
-    <td class="text-right">Potential:</td>
-    <td rv-text="coin.price_usd | potential research.targetPrice"></td>
+    <td>Upside:</td>
+    <td class="text-center" rv-text="coin.price_usd | potential research.targetPrice1m"></td>
+    <td class="text-center" rv-text="coin.price_usd | potential research.targetPrice1q"></td>
+    <td class="text-center" rv-text="coin.price_usd | potential research.targetPrice1y"></td>
   </tr>
   <tr>
-    <td class="text-right">Potential mCap:</td>
-    <td rv-text="coin.price_usd | divide research.targetPrice | multiply coin.market_cap_usd | number"></td>
+    <td>mCap:</td>
+    <td class="text-center" rv-text="coin.price_usd | divide research.targetPrice1m | multiply coin.market_cap_usd | number"></td>
+    <td class="text-center" rv-text="coin.price_usd | divide research.targetPrice1q | multiply coin.market_cap_usd | number"></td>
+    <td class="text-center" rv-text="coin.price_usd | divide research.targetPrice1y | multiply coin.market_cap_usd | number"></td>
   </tr>
 </table>
 

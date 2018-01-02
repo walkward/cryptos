@@ -25,7 +25,7 @@ function coin (ticker, handleData) {
 function price (symbols, handleData) {
   symbols = _.join(symbols, ',')
   $.ajax({
-    url: 'https://min-api.cryptocompare.com/data/price?fsym=' + symbols + '&tsyms=USD',
+    url: 'https://min-api.cryptocompare.com/data/price?fsym=' + symbols + '&tsyms=USD&extraParams=walksCryptos',
     method: 'GET',
     dataType: 'json',
     success: function (data) {
@@ -37,7 +37,7 @@ function price (symbols, handleData) {
 function usd (symbols, handleData) {
   symbols = _.join(symbols, ',')
   $.ajax({
-    url: 'https://min-api.cryptocompare.com/data/price?fsym=USD&tsyms=' + symbols,
+    url: 'https://min-api.cryptocompare.com/data/price?fsym=USD&tsyms=' + symbols + '&extraParams=walksCryptos',
     method: 'GET',
     dataType: 'json',
     success: function (data) {
@@ -59,7 +59,7 @@ function research (id, handleData) {
       'content-type': 'application/json'
     },
     'processData': false,
-    'data': '{"query":"{Coin(id:\\"' + id + '\\"){name ticker icoDate blockUrl floorPrice marketingRating mgmtRating mgmtReview productReview productRating loyaltyRating devRating devQty teamQty newsEvents targetPrice url verdict wPUrl peers recommendation maxAllocation holdings githubUrl}}"}'
+    'data': '{"query":"{Coin(id:\\"' + id + '\\"){name ticker icoDate blockUrl floorPrice marketingRating mgmtRating mgmtReview productReview productRating loyaltyRating devRating devQty teamQty newsEvents targetPrice1m targetPrice1q targetPrice1y url verdict wPUrl peers recommendation maxAllocation holdings githubUrl}}"}'
   }).done(function (data) {
     handleData(data)
   })
@@ -78,7 +78,7 @@ function allResearch (handleData) {
       'content-type': 'application/json'
     },
     'processData': false,
-    'data': '{"query":"{allCoins{id name ticker loyaltyRating productRating marketingRating mgmtRating devRating targetPrice floorPrice recommendation holdings}}"}'
+    'data': '{"query":"{allCoins{id name ticker loyaltyRating productRating marketingRating mgmtRating devRating targetPrice1m targetPrice1q targetPrice1y floorPrice recommendation holdings}}"}'
   }).done(function (data) {
     handleData(data)
   })
