@@ -59,7 +59,7 @@ function research (id, handleData) {
       'content-type': 'application/json'
     },
     'processData': false,
-    'data': '{"query":"{Coin(id:\\"' + id + '\\"){name ticker icoDate blockUrl floorPrice hypeRating mgmtRating wPRating mgmtReview productReview productRating loyaltyRating devRating devQty teamQty newsEvents targetPrice url wPReview wPUrl peers recommendation maxAllocation holdings githubUrl}}"}'
+    'data': '{"query":"{Coin(id:\\"' + id + '\\"){name ticker icoDate blockUrl floorPrice marketingRating mgmtRating mgmtReview productReview productRating loyaltyRating devRating devQty teamQty newsEvents targetPrice url verdict wPUrl peers recommendation maxAllocation holdings githubUrl}}"}'
   }).done(function (data) {
     handleData(data)
   })
@@ -78,9 +78,8 @@ function allResearch (handleData) {
       'content-type': 'application/json'
     },
     'processData': false,
-    'data': '{"query":"{allCoins{id name ticker loyaltyRating wPRating productRating hypeRating mgmtRating devRating targetPrice floorPrice recommendation holdings}}"}'
+    'data': '{"query":"{allCoins{id name ticker loyaltyRating productRating marketingRating mgmtRating devRating targetPrice floorPrice recommendation holdings}}"}'
   }).done(function (data) {
-    console.log(data)
     handleData(data)
   })
 }

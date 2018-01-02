@@ -145,20 +145,20 @@
     </div>
   </div>
 
-  <table class="tablesorter" rv-show="allResearch.0" style="display:none;">
+  <table id="allResearchTable" class="tablesorter" rv-show="allResearch.0" style="display:none;">
     <thead>
       <tr>
         <th>Ticker</th>
         <th>Coin</th>
         <th>Recco.</th>
         <th>Loyalty</th>
-        <th>White Paper</th>
-        <th>Product</th>
-        <th>Hype</th>
-        <th>Management</th>
-        <th>Developers</th>
-        <th>Floor Price</th>
-        <th>Target Price</th>
+        <th>Prod.</th>
+        <th>Mktg.</th>
+        <th>Mgmt.</th>
+        <th>Devs.</th>
+        <th>Rating</th>
+        <th>Floor</th>
+        <th>Target</th>
         <th>Holdings</th>
         <th>Value</th>
       </tr>
@@ -169,11 +169,11 @@
         <td rv-text="item.name"></td>
         <td class="status-wrapper"><span rv-text="item.recommendation"></span><span rv-html="item.recommendation | recommendation"></span></td>
         <td rv-text="item.loyaltyRating"></td>
-        <td rv-text="item.wPRating"></td>
         <td rv-text="item.productRating"></td>
-        <td rv-text="item.hypeRating"></td>
+        <td rv-text="item.marketingRating"></td>
         <td rv-text="item.mgmtRating"></td>
         <td rv-text="item.devRating"></td>
+        <td rv-text="item.ratingSum | sum item.mgmtRating | sum item.marketingRating | sum item.loyaltyRating | sum item.devRating | sum item.productRating"></td>
         <td rv-text="item.floorPrice"></td>
         <td rv-text="item.targetPrice"></td>
         <td rv-text="item.holdings"></td>

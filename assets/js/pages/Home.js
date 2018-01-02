@@ -8,7 +8,8 @@ export default function () {
   return new Promise((resolve, reject) => {
     const settings = {
       selectors: {
-        tableSelector: '#allResearch'
+        rivetsSelector: '#allResearch',
+        tableSelector: '#allResearchTable'
       }
     }
     rivetsConfig()
@@ -16,6 +17,7 @@ export default function () {
     // Get the data before executing anything else
     getData.allResearch((data) => {
       cryptos.allResearch = data.data.allCoins
+      cryptos.allResearch = _.map(cryptos.allResearch, (o) => { o.ratingSum = 0; return o })
 
       // Get prices for each coin before we bind the rivets
       let priceSymbols = _.map(cryptos.allResearch, (o) => { return o.ticker })

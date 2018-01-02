@@ -5,12 +5,8 @@
     <td><input class="margin-0" type="number" name="mgmtRating" rv-value="research.mgmtRating"></td>
   </tr>
   <tr>
-    <td class="text-right"><span data-tooltip title="0=Lackluster&#13; 5=Medeocre Solution&#13; 10=Visionary">White Paper:</span></td>
-    <td><input class="margin-0" type="number" name="wPRating" rv-value="research.wPRating"></td>
-  </tr>
-  <tr>
-    <td class="text-right"><span data-tooltip title="0=Off the map&#13; 5=Some Coverage&#13; 10=Lambos!">Hype:</span></td>
-    <td><input class="margin-0" type="number" name="hypeRating" rv-value="research.hypeRating"></td>
+    <td class="text-right"><span data-tooltip title="0=Off the map&#13; 5=Some Coverage&#13; 10=Perfect PR (not Lambos!)">Marketing:</span></td>
+    <td><input class="margin-0" type="number" name="marketingRating" rv-value="research.marketingRating"></td>
   </tr>
   <tr>
     <td class="text-right"><span data-tooltip title="0=Widespread Hate&#13; 5=Some Hodlers&#13; 10=Cult Following">Loyalty:</span></td>
@@ -26,6 +22,6 @@
   </tr>
   <tr>
     <td class="text-right"><strong>Total:</strong></td>
-    <td><strong rv-text="ratingSum | sum research.mgmtRating | sum research.wPRating | sum research.hypeRating | sum research.loyaltyRating | sum research.devRating | sum research.productRating"></strong></td>
+    <td><strong rv-text="ratingSum | sum research.mgmtRating | sum research.marketingRating | sum research.loyaltyRating | sum research.devRating | sum research.productRating"></strong></td>
   </tr>
 </table>
