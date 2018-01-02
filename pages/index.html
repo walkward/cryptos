@@ -12,27 +12,37 @@ permalink: /
     </div>
   </div>
 
-  <table id="marketData" class="tablesorter" rv-show="marketData.0" style="display:none;">
+  <table id="allResearch" class="tablesorter" rv-show="allResearch.0" style="display:none;">
     <thead>
       <tr>
-        <th width="70">Rank</th>
+        <th>Ticker</th>
         <th>Coin</th>
-        <th>Price</th>
-        <th>1h</th>
-        <th>24h</th>
-        <th>7d</th>
-        <th>MCap</th>
+        <th>Recco.</th>
+        <th>Loyalty</th>
+        <th>White Paper</th>
+        <th>Product</th>
+        <th>Hype</th>
+        <th>Management</th>
+        <th>Developers</th>
+        <th>Floor Price</th>
+        <th>Target Price</th>
+        <th>Holdings</th>
       </tr>
     </thead>
     <tbody>
-      <tr rv-each-item="marketData">
-        <td rv-text="item.rank"></td>
-        <td><span rv-text="item.name"></span> (<span rv-text="item.symbol"></span>)</td>
-        <td rv-text="item.price_usd | currency"></td>
-        <td rv-text="item.percent_change_1h | percentage"></td>
-        <td rv-text="item.percent_change_24h | percentage"></td>
-        <td rv-text="item.percent_change_7d | percentage"></td>
-        <td rv-text="item.market_cap_usd | number"></td>
+      <tr rv-each-item="allResearch">
+        <td><a rv-href="item.id | researchUrl '{{ site.url }}'" rv-text="item.ticker"></a></td>
+        <td rv-text="item.name"></td>
+        <td class="status-wrapper"><span rv-text="item.recommendation"></span><span rv-html="item.recommendation | recommendation"></span></td>
+        <td rv-text="item.loyaltyRating"></td>
+        <td rv-text="item.wPRating"></td>
+        <td rv-text="item.productRating"></td>
+        <td rv-text="item.hypeRating"></td>
+        <td rv-text="item.mgmtRating"></td>
+        <td rv-text="item.devRating"></td>
+        <td rv-text="item.floorPrice"></td>
+        <td rv-text="item.targetPrice"></td>
+        <td rv-text="item.holdings"></td>
       </tr>
     </tbody>
   </table>

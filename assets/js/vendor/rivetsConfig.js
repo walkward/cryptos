@@ -4,8 +4,13 @@ import _ from 'lodash'
 
 export default function () {
   return new Promise((resolve, reject) => {
+    // Create research Url
+    rivets.formatters.researchUrl = function (value, baseUrl) {
+      return baseUrl + '/research/?id=' + value
+    }
+
     // Color reccomendation
-    rivets.formatters.recommendation = function (value, e) {
+    rivets.formatters.recommendation = function (value) {
       if (value === 'Buy') return '<span class="status buy"></span>'
       else if (value === 'Hold') return '<span class="status hold"></span>'
       else return '<span class="status sell"></span>'

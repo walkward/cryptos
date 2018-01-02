@@ -65,10 +65,31 @@ function research (id, handleData) {
   })
 }
 
+function allResearch (handleData) {
+  const apiKey = localStorage.getItem('myKey')
+  if (!apiKey) return
+  $.ajax({
+    'async': true,
+    'crossDomain': true,
+    'url': 'https://api.graph.cool/simple/v1/cjbwdrpss0okf0154rwt7noqf',
+    'method': 'POST',
+    'headers': {
+      'authorization': apiKey,
+      'content-type': 'application/json'
+    },
+    'processData': false,
+    'data': '{"query":"{allCoins{id name ticker loyaltyRating wPRating productRating hypeRating mgmtRating devRating targetPrice floorPrice recommendation holdings}}"}'
+  }).done(function (data) {
+    console.log(data)
+    handleData(data)
+  })
+}
+
 module.exports = {
   marketData: marketData,
   price: price,
   research: research,
   usd: usd,
-  coin: coin
+  coin: coin,
+  allResearch: allResearch
 }

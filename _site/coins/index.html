@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home • Crypto Tracker</title><link rel="canonical" href="https://walkward.github.io/cryptos/">
+  <title>Coins • Crypto Tracker</title><link rel="canonical" href="https://walkward.github.io/cryptos/coins/">
   <link rel="stylesheet" href="https://walkward.github.io/cryptos/assets/app.css">
   
 </head>
 
-  <body id="" class="index-page" >
+  <body id="" class="coins-page" >
     <div class="off-canvas position-left white-bg" id="tools" data-off-canvas>
 
   <!-- Close button -->
@@ -136,46 +136,36 @@
   </ul>
 </div>
 
-      <main id="main" data-page="Home">
+      <main id="main" data-page="Coins">
         <div class="grid-container">
 
   <div class="grid-x grid-padding-x">
     <div class="large-12 cell">
-      <h2>Dashboard</h2>
+      <h2>Coins</h2>
     </div>
   </div>
 
-  <table id="allResearch" class="tablesorter" rv-show="allResearch.0" style="display:none;">
+  <table id="marketData" class="tablesorter" rv-show="marketData.0" style="display:none;">
     <thead>
       <tr>
-        <th>Ticker</th>
+        <th width="70">Rank</th>
         <th>Coin</th>
-        <th>Recco.</th>
-        <th>Loyalty</th>
-        <th>White Paper</th>
-        <th>Product</th>
-        <th>Hype</th>
-        <th>Management</th>
-        <th>Developers</th>
-        <th>Floor Price</th>
-        <th>Target Price</th>
-        <th>Holdings</th>
+        <th>Price</th>
+        <th>1h</th>
+        <th>24h</th>
+        <th>7d</th>
+        <th>MCap</th>
       </tr>
     </thead>
     <tbody>
-      <tr rv-each-item="allResearch">
-        <td><a rv-href="item.id | researchUrl 'https://walkward.github.io/cryptos'" rv-text="item.ticker"></a></td>
-        <td rv-text="item.name"></td>
-        <td class="status-wrapper"><span rv-text="item.recommendation"></span><span rv-html="item.recommendation | recommendation"></span></td>
-        <td rv-text="item.loyaltyRating"></td>
-        <td rv-text="item.wPRating"></td>
-        <td rv-text="item.productRating"></td>
-        <td rv-text="item.hypeRating"></td>
-        <td rv-text="item.mgmtRating"></td>
-        <td rv-text="item.devRating"></td>
-        <td rv-text="item.floorPrice"></td>
-        <td rv-text="item.targetPrice"></td>
-        <td rv-text="item.holdings"></td>
+      <tr rv-each-item="marketData">
+        <td rv-text="item.rank"></td>
+        <td><span rv-text="item.name"></span> (<span rv-text="item.symbol"></span>)</td>
+        <td rv-text="item.price_usd | currency"></td>
+        <td rv-text="item.percent_change_1h | percentage"></td>
+        <td rv-text="item.percent_change_24h | percentage"></td>
+        <td rv-text="item.percent_change_7d | percentage"></td>
+        <td rv-text="item.market_cap_usd | number"></td>
       </tr>
     </tbody>
   </table>

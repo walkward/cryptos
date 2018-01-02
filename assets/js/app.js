@@ -4,6 +4,7 @@ import rivets from 'rivets'
 import params from './utils/params'
 import tools from './lib/tools'
 import Home from './pages/Home'
+import Coins from './pages/Coins'
 import Research from './pages/Research'
 
 /**
@@ -25,7 +26,8 @@ window.cryptos = {
  */
 const pageFunctions = {
   Home: Home,
-  Research: Research
+  Research: Research,
+  Coins: Coins
 }
 
 /**

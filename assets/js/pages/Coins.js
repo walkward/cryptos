@@ -7,18 +7,18 @@ export default function () {
   return new Promise((resolve, reject) => {
     const settings = {
       selectors: {
-        tableSelector: '#allResearch'
+        tableSelector: '#marketData'
       }
     }
     rivetsConfig()
 
     // Get the data before executing anything else
-    getData.allResearch((data) => {
-      cryptos.allResearch = data.data.allCoins
+    getData.marketData((data) => {
+      cryptos.marketData = data
 
       const bindRivets = function () {
         return rivets.bind($(settings.selectors.tableSelector), {
-          allResearch: cryptos.allResearch
+          marketData: cryptos.marketData
         })
       }
 
