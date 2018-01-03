@@ -27,3 +27,10 @@ research:
     id: cjbz6t9dr04wh01242m4jk78o
   - name: IOTA
     id: cjbz7um3609ih0124r379i9tb
+  - name: AdEx
+    id: cjbzeomcb0sa901063v1puon7
+    priceApi: adx-net
+  - name: Hoqu
+    id: cjbzfz6gj1thq0152k7323z0x
+  - name: Safex
+    id: cjbzh23c51u8q0172yhfriwr3

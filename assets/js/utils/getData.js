@@ -7,6 +7,9 @@ function marketData (handleData) {
     dataType: 'json',
     success: function (data) {
       handleData(data)
+    },
+    error: function (err) {
+      handleData(err)
     }
   })
 }
@@ -18,6 +21,9 @@ function coin (ticker, handleData) {
     dataType: 'json',
     success: function (data) {
       handleData(data)
+    },
+    error: function (err) {
+      handleData(err)
     }
   })
 }
@@ -30,6 +36,10 @@ function price (symbols, handleData) {
     dataType: 'json',
     success: function (data) {
       handleData(data)
+    },
+    error: function (err) {
+      console.log(err)
+      handleData(err)
     }
   })
 }
@@ -42,6 +52,9 @@ function usd (symbols, handleData) {
     dataType: 'json',
     success: function (data) {
       handleData(data)
+    },
+    error: function (err) {
+      handleData(err)
     }
   })
 }

@@ -45,6 +45,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
       .then((result) => {
         tools()
       })
+      .catch(err => {
+        console.log(err)
+      })
   } else {
     tools()
   }
