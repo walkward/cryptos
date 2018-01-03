@@ -6,6 +6,7 @@ import tools from './lib/tools'
 import Home from './pages/Home'
 import Coins from './pages/Coins'
 import Research from './pages/Research'
+import './utils/newCoin'
 
 /**
  * Methods available to the browser

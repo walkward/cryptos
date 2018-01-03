@@ -7,26 +7,24 @@ permalink: /
 <div class="grid-container" id="allResearch">
 
   <div class="grid-x grid-padding-x">
-    <div class="large-12 cell">
-      <h2>Dashboard</h2>
-    </div>
+    {% include pageTitle.html %}
   </div>
 
   <table id="allResearchTable" class="tablesorter" rv-show="allResearch.0" style="display:none;">
     <thead>
       <tr>
-        <th>Ticker</th>
-        <th>Coin</th>
-        <th>Recco.</th>
-        <th>Loyalty</th>
-        <th>Prod.</th>
-        <th>Mktg.</th>
-        <th>Mgmt.</th>
-        <th>Devs.</th>
-        <th>Rating</th>
+        <th width="70">Ticker</th>
+        <th width="150">Coin</th>
+        <th width="100">Recco.</th>
+        <th width="70">Loy.</th>
+        <th width="70">Prod.</th>
+        <th width="70">Mktg.</th>
+        <th width="70">Mgmt.</th>
+        <th width="70">Devs.</th>
+        <th width="70">Rtg.</th>
         <th>Floor</th>
         <th>Target</th>
-        <th>Holdings</th>
+        <th>Hold</th>
         <th>Value</th>
       </tr>
     </thead>
@@ -35,12 +33,12 @@ permalink: /
         <td><a rv-href="item.id | researchUrl '{{ site.url }}'" rv-text="item.ticker"></a></td>
         <td rv-text="item.name"></td>
         <td class="status-wrapper"><span rv-text="item.recommendation"></span><span rv-html="item.recommendation | recommendation"></span></td>
-        <td rv-text="item.loyaltyRating"></td>
-        <td rv-text="item.productRating"></td>
-        <td rv-text="item.marketingRating"></td>
-        <td rv-text="item.mgmtRating"></td>
-        <td rv-text="item.devRating"></td>
-        <td rv-text="item.ratingSum | sum item.mgmtRating | sum item.marketingRating | sum item.loyaltyRating | sum item.devRating | sum item.productRating"></td>
+        <td class="text-center" rv-text="item.loyaltyRating"></td>
+        <td class="text-center" rv-text="item.productRating"></td>
+        <td class="text-center" rv-text="item.marketingRating"></td>
+        <td class="text-center" rv-text="item.mgmtRating"></td>
+        <td class="text-center" rv-text="item.devRating"></td>
+        <td class="text-center" rv-text="item.ratingSum | sum item.mgmtRating | sum item.marketingRating | sum item.loyaltyRating | sum item.devRating | sum item.productRating"></td>
         <td rv-text="item.floorPrice"></td>
         <td rv-text="item.targetPrice1m"></td>
         <td rv-text="item.holdings"></td>

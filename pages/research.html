@@ -8,13 +8,13 @@ permalink: /research/
   <form id="researchForm">
 
     <div class="grid-x grid-padding-x align-justify">
-      <div class="small-12 large-4 cell">
-        <h2 class="font-bold"> <span rv-text="research.name"></span> {{ page.title }}</h2>
-      </div>
+      {% include pageTitle.html %}
+
       <div class="small-12 large-4 cell flex-container">
         <select id="researchSelector" class="" name="">
           <option value="" selected="selected" disabled="disabled">Select Coin</option>
-          {% for item in site.data.navigation.research %}
+          {% assign sortedCoins = site.data.navigation.research | sort: 'name' %}
+          {% for item in sortedCoins %}
           <option value="{{ item.id }}">{{ item.name }}</option>
           {% endfor %}
         </select>

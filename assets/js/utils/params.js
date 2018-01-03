@@ -7,8 +7,8 @@ class Params {
     this.id = currentParams.id
     this.name = pageParams.name
     this.twitter = pageParams.twitter
-    this.trends = pageParams.trends
-    this.news = pageParams.news
+    this.priceApi = typeof pageParams.priceApi !== 'undefined' ? pageParams.priceApi : pageParams.name
+    this.coinCheckup = typeof pageParams.coinCheckup !== 'undefined' ? pageParams.coinCheckup : pageParams.name
   }
 }
 

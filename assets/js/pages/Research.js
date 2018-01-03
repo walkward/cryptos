@@ -26,7 +26,7 @@ export default function () {
         // Getting the price for the current currency
         const getPrice = () => {
           return new Promise((resolve, reject) => {
-            getData.coin([cryptos.research.name], (res) => {
+            getData.coin([cryptos.params.priceApi], (res) => {
               cryptos.researchCoin = res[0]
               resolve()
             })

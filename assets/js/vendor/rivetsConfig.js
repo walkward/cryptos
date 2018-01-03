@@ -25,9 +25,11 @@ export default function () {
 
     // Calculate Value of Holdings
     rivets.formatters.calcValue = function (value, ticker) {
-      let base = Big(1)
-      let price = Big(cryptos.researchPrices[ticker])
-      value = value !== null ? Big(value) : Big(0)
+      // Do not calculate value if we don't have the ticker price.
+      if (typeof cryptos.researchPrices[ticker] === 'undefined') return
+      let base = new Big(1)
+      let price = new Big(cryptos.researchPrices[ticker])
+      value = value !== null ? new Big(value) : Big(0)
       return '$' + base.div(price).times(value).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
     }
 

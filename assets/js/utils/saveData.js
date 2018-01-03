@@ -22,6 +22,25 @@ const saveResearch = (researchData, handleData) => {
   })
 }
 
+const createCoin = (name, ticker, handleData) => {
+  const apiKey = localStorage.getItem('myKey')
+  if (!apiKey) return
+  $.ajax({
+    'async': true,
+    'crossDomain': true,
+    'url': 'https://api.graph.cool/simple/v1/cjbwdrpss0okf0154rwt7noqf',
+    'method': 'POST',
+    'headers': {
+      'authorization': apiKey,
+      'content-type': 'application/json'
+    },
+    'processData': false,
+    'data': JSON.stringify({ 'query': 'mutation { createCoin(name:"' + name + '",ticker:"' + ticker + '") { id } } ' })
+  }).done(function (data) {
+    handleData(data)
+  })
+}
+
 const research = (pageData) => {
   // Assign the object ID
   let formData = 'id:' + '\"' + cryptos.params.id + '\",'
@@ -45,4 +64,4 @@ const research = (pageData) => {
   })
 }
 
-module.exports = { research }
+module.exports = { research, createCoin }

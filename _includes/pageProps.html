@@ -2,7 +2,7 @@
 <script type="text/javascript">
 var pageProps = [
 {%- for item in site.data.navigation.research -%}
-{ name: {{ item.name | jsonify }}, id: {{ item.id | jsonify }}, twitter: {{ item.twitter | jsonify }}, trends: {{ item.trends | jsonify }}, news: {{ item.news | jsonify }} }{%- unless forloop.last -%},{%- endunless -%}
+{ name: {{ item.name | jsonify }}, id: {{ item.id | jsonify }}, twitter: {{ item.twitter | jsonify }}, {% if item.priceApi %}priceApi:{{ item.priceApi | jsonify }},{% endif %} {% if item.coinCheckup %} coinCheckup: {{ item.coinCheckup | jsonify }}{% endif %} }{%- unless forloop.last -%},{%- endunless -%}
 {%- endfor -%}
 ];
 </script>

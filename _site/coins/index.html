@@ -133,6 +133,14 @@
         </svg>
       </a>
     </li>
+    <!-- New Coin -->
+    <li>
+      <button class="button" data-open="addNewCoin">
+        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="#ffffff" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+        </svg>
+      </button>
+    </li>
   </ul>
 </div>
 
@@ -140,9 +148,10 @@
         <div class="grid-container">
 
   <div class="grid-x grid-padding-x">
-    <div class="large-12 cell">
-      <h2>Coins</h2>
-    </div>
+    <div class="small-12 large-4 cell">
+  <h2 class="font-bold"> <span rv-text="research.name"></span> Coins</h2>
+</div>
+
   </div>
 
   <table id="marketData" class="tablesorter" rv-show="marketData.0" style="display:none;">
@@ -175,9 +184,25 @@
       </main>
     </div>
     <div class="reveal callout padding-1 toast" id="toastModal" data-reveal data-overlay="false" data-reset-on-close="true"></div>
+    <div id="addNewCoin" class="reveal tiny" data-reveal data-reset-on-close="true">
+  <form id="addCoinForm">
+    <div class="grid-x grid-padding-x">
+      <div class="large-12 cell">
+        <h3>Add Coin</h3>
+        <label for="">Ticker</label>
+        <input type="text" name="ticker" value="">
+        <label for="">Name</label>
+        <input type="text" name="name" value="">
+        <p class="text-center margin-0"><input type="submit" class="button margin-0" name="" value="CREATE"></p>
+      </div>
+    </div>
+  </form>
+  <span data-addCoin-id></span>
+</div>
+
     <!-- Page Json -->
 <script type="text/javascript">
-var pageProps = [{ name: "Bitcoin", id: "cjbx57gcg30vs0156ijycompn", twitter: null, trends: "/trends/?name=Bitcoin", news: null },{ name: "Ethereum", id: "cjbwebhlt2upf0156avwrhdtr", twitter: null, trends: "/trends/?name=Ethereum", news: null },{ name: "Ripple", id: "cjbwhcn872v220156ga04c1ab", twitter: null, trends: "/trends/?name=Ripple", news: null },{ name: "Tronix", id: "cjbwhbyiu2v1u0156n9onrwff", twitter: null, trends: "/trends/?name=Tronix", news: null },{ name: "Salt Lending", id: "cjbwhbpm52v1p015632se5yq6", twitter: null, trends: "/trends/?name=Salt%20Lending", news: null },{ name: "Verge", id: "cjbwhcy0p2v260156ps5u6dv4", twitter: null, trends: "/trends/?name=Verge", news: null },{ name: "Ethlend", id: "cjbwhcecz2v1y0156hyhkvie0", twitter: null, trends: "/trends/?name=Ethlend", news: null },{ name: "Cardano", id: "cjbwh9tpt2v180156og8gaznv", twitter: null, trends: "/trends/?name=Cardano", news: null },{ name: "FunFair", id: "cjbwhawyq2v1h01561uaaeons", twitter: null, trends: "/trends/?name=FunFair", news: null }];
+var pageProps = [{ name: "Bitcoin", id: "cjbx57gcg30vs0156ijycompn", twitter: null,   },{ name: "Ethereum", id: "cjbwebhlt2upf0156avwrhdtr", twitter: null,   },{ name: "Ripple", id: "cjbwhcn872v220156ga04c1ab", twitter: null,   },{ name: "Tronix", id: "cjbwhbyiu2v1u0156n9onrwff", twitter: null,   },{ name: "Salt Lending", id: "cjbwhbpm52v1p015632se5yq6", twitter: null,   },{ name: "Verge", id: "cjbwhcy0p2v260156ps5u6dv4", twitter: null,   },{ name: "Ethlend", id: "cjbwhcecz2v1y0156hyhkvie0", twitter: null,   },{ name: "Cardano", id: "cjbwh9tpt2v180156og8gaznv", twitter: null,   },{ name: "FunFair", id: "cjbwhawyq2v1h01561uaaeons", twitter: null,   },{ name: "NEO", id: "cjbyljv7j3bxe0156qa2fbybe", twitter: null,   },{ name: "Deepbrain Chain", id: "cjbyllibn3bxo0156h1eqsi9y", twitter: null, priceApi:"deepbrain-chain",  coinCheckup: "deepbrain-chain" },{ name: "Monero", id: "cjbz6t9dr04wh01242m4jk78o", twitter: null,   },{ name: "IOTA", id: "cjbz7um3609ih0124r379i9tb", twitter: null,   }];
 </script>
 
     <!-- BEG MAIN SCRIPTS-->
